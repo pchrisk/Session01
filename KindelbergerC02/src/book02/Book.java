@@ -74,7 +74,7 @@ class Book {
 	}
 
 	public void setRefNumber(String refNumber) {
-		// In setRefNumber method, implement the following: if the refNumber parameter is less than 3 characters, print an error message and leave refNumber unchanged. 
+		
 		if (refNumber.length() < 3) {
 			System.out.println("There was an error, the Reference Number must be 3 characters or more.");
 		} else {
@@ -95,28 +95,30 @@ class Book {
 	}
 	
 	public void printBinding() {
-		String binding2 = "";
-				
-		switch (binding) {
-		case HARDCOVER:
-			binding2 = "Hardcover";
-			break;
-		case PAPERBACK:
-			binding2 = "Paperback";
-			break;
-		case EPUB:
-			binding2 = "Epub";
-			break;
-		case MOBI:
-			binding2 = "Mobi";
-			break;
-		case APK:
-			binding2 = "Apk";
-			break;
-			
-		}
-				
-		System.out.println(binding2);
+		
+		System.out.println(binding.getWritable());
+//		String binding2 = "";
+//				
+//		switch (binding) {
+//		case HARDCOVER:
+//			binding2 = "Hardcover";
+//			break;
+//		case PAPERBACK:
+//			binding2 = "Paperback";
+//			break;
+//		case EPUB:
+//			binding2 = "Epub";
+//			break;
+//		case MOBI:
+//			binding2 = "Mobi";
+//			break;
+//		case APK:
+//			binding2 = "Apk";
+//			break;
+//			
+//		}
+//				
+//		System.out.println(binding2);
 	}
 	
 	public void printPages() {
