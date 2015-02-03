@@ -7,7 +7,7 @@ package book02;
  * @author (Chris Kindelberger)
  * @version (1/31/2015)
  */
-/*test*/
+/*test2*/
 
 
 class Book {
