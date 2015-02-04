@@ -2,7 +2,7 @@ package book02;
 
 public enum Binding {
 	
-	HARDCOVER ("Harcover"), PAPERBACK ("Paperback"), EPUB ("Epub"), MOBI ("Mobi"), APK ("Apk");
+	HARDCOVER ("Hardcover"), PAPERBACK ("Paperback"), EPUB ("Epub"), MOBI ("Mobi"), APK ("Apk");
 	
 	private String writable;
 	
