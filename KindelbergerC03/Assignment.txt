@@ -1,0 +1,55 @@
+Assignment 3: Collections of Objects
+
+This assignment will require the implementation of a class representing a Library, and verification of its operations. In this specific case borrowing and returning Books.
+
+Description
+
+Create a new Java project in your tool of choice, LastnameFirstInitial03, for this assignment. You will need to define one class, Library.
+
+Library
+
+Start the Library class See Code Block - Library Class just below assignment 3 on main page
+
+To complete the Library class you will need to:
+
+Add the appropriate import statements.
+Complete the declaration of the checkoutBooks HashMap. Use generics to specify the key and value types. In this case, the key is isbn number of book and value is an list of 1 or more patrons that have borrowed this book.
+Implement the constructor to initialize the HashMap.
+Implement the checkoutBook(String,String) method. This is an isbn for book and one patron thats checking it out
+Define and implement the checkoutBook(String,String variable argument list) method declaration and implement the method. This is an isbn for a book and any number of patrons that are checking it out.
+Define and Implement the returnBook(String,String) method. Is isbn for book and person return the book
+Define and Implement the printCheckoutBooksByIsbn(String) method by isbn number only
+Optional, Define and implement printAllCheckoutBooks() method
+Verification Verify the Library class works properly using an java test file. Create a junit V4 file in the source folder, named LibraryTest. Minimally, see the following at Code Block - Verification Code just below assignment 3 on main page. This can be copy/paste into LibraryTest file/class.
+
+Tool Usage
+
+For this section you will need to run the command line commands javac, and javadoc and place the console output from these commands in a file named console.txt. The console.txt file should be created in the project src directory. From the console (dos or shell window), in the project (03) directory run the following commands and place the command and its output in the console.txt file. Prior to running these commands delete the contents of the classes directory.
+
+Execute the javac command required to compile all the Java source files in the src directory. In addition to any other options you must specify the -verbose option. Why is there compiler errors?
+Execute the javadoc command required to generate the javadocs for all the Java source files in the src directory, the documentation should be generatd in the docs folder.
+Questions
+
+Answer the following questions and place in answer.txt The answer.txt file should be created in the project src directory.
+
+Write a declaration for an array variable called "people" that could be used to refer to an array of "Person" objects.
+Write a declaration for an array variable called "vacant" that could be used to refer to an array of "boolean" values.
+In the previous two questions what is the values of the arrays?
+What is the classpath and what is its purpose?
+Below is a list of names/phrases, following that is a list of statements. Match the names/phrases to the statements. Each name/phrase may be mapped to more than one statement, and each statement may have more than one name/phrase mapped to it.
+
+instance variable, argument, return type, getter, setter, pass by valve, method 
+
+A class can have any number of these.
+A method can have only one of these.
+This can be implicitly promoted.
+It really means 'make a copy'.
+Only setters should update these.
+A method can have many of these.
+I return something by definition.
+I can have many arguments.
+By definition, I take one argument.
+What to turn in
+
+Create a zip file of the project.
+Submit this file as per the assignment submission instructions, which are below on this page
