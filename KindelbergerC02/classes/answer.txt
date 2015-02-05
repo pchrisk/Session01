@@ -1,0 +1,18 @@
+1. Explain the modulo operator. You may need to consult more resources (online Java language resources, other Java books, etc.) to find out the details.
+The modulo operator is the remainder operator. It is nothing more than the remainder after a division operations. 
+In Java (along with C and C++ it is represented as the percent sign.
+
+For Example, 10 modulo 2 is 0, because 10 divided by 2 is 5 with a remainder of 0.
+
+2. What is the result of the expression (8 % 3) ?
+8 % 3 = 2
+
+3. What are all possible results of the expression (n % 5), where n is an integer variable?
+-4, -3, -2, -1, 0, 1, 2, 3, 4
+
+
+4. What are all possible results of the expression (n % m), where n and m are integer variables? 
+The range from -(m-1) to (m-1)
+
+In the previous question this would be the range from -(5-1) to (5-1) or -4 to 4 inclusive.
+
