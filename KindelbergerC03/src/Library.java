@@ -18,7 +18,7 @@ class Library {
   */
   HashMap<String, ArrayList<String>> checkoutBooks; // complete this declaraion using generics
   
-  ArrayList<String> patronList = new ArrayList<String>();
+  //ArrayList<String> patronList = new ArrayList<String>();
 
   /**
   * Constructor, initializes the entries HashMap.
@@ -39,7 +39,7 @@ class Library {
   public void checkoutBook(String isbn, String patron) {
 
   // add your code here
-	  checkoutBooks.put(isbn, patronList.add(patron));
+	  checkoutBooks.put(isbn, new ArrayList<String>(patron));
 
   }
 
