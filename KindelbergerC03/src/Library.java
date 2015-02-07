@@ -16,8 +16,9 @@ class Library {
   * has a String key for the isbn and the data is a String 
   * with patron's name
   */
-  HashMap<String, ArrayList<String>> checkoutBooks; // complete this declaraion using generics
-  
+  //HashMap<String, ArrayList<String>> checkoutBooks; // complete this declaraion using generics
+	HashMap<String, String> checkoutBooks; // complete this declaraion using generics
+	  
   //ArrayList<String> patronList = new ArrayList<String>();
 
   /**
@@ -27,7 +28,7 @@ class Library {
 
   // perform initialization here
 	  
-	  checkoutBooks = new HashMap<String, ArrayList<String>>();
+	  checkoutBooks = new HashMap<String, String>();
 	  
 	  
 
@@ -39,17 +40,17 @@ class Library {
   public void checkoutBook(String isbn, String patron) {
 
   // add your code here
-	  checkoutBooks.put(isbn, new ArrayList<String>(patron));
+	  checkoutBooks.put(isbn, patron);
 
   }
 
-public void printCheckoutBooksByIsbn(String string) {
-	// TODO Auto-generated method stub
+public void printCheckoutBooksByIsbn(String isbn) {
+	System.out.println(isbn + ": " + checkoutBooks.get(isbn));
 	
 }
 
-public void returnBook(String string, String string2) {
-	// TODO Auto-generated method stub
+public void returnBook(String isbn, String patron) {
+	checkoutBooks.remove(isbn, patron);
 	
 } 
 }
