@@ -19,6 +19,7 @@ public class LibraryTest {
         printSomeEntries();
         returnSomeItems();
         printSomeEntries();
+        printAllEntries();
     }
 
     void addSomeEntries() {
@@ -46,5 +47,9 @@ public class LibraryTest {
         library.returnBook("001", "Julie Hill");
         library.printCheckoutBooksByIsbn("001");
 
+    }
+    
+    void printAllEntries() {
+    	library.printAllCheckoutBooks();
     }
 }
