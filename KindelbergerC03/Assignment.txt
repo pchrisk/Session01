@@ -33,10 +33,16 @@ To complete the Library class you will need to:
 
 Tool Usage
 
-For this section you will need to run the command line commands javac, and javadoc and place the console output from these commands in a file named console.txt. The console.txt file should be created in the project src directory. From the console (dos or shell window), in the project (03) directory run the following commands and place the command and its output in the console.txt file. Prior to running these commands delete the contents of the classes directory.
+For this section you will need to run the command line commands javac, and javadoc and place the console output from these 
+commands in a file named console.txt. The console.txt file should be created in the project src directory. From the console 
+(dos or shell window), in the project (03) directory run the following commands and place the command and its output in the 
+console.txt file. Prior to running these commands delete the contents of the classes directory.
 
-Execute the javac command required to compile all the Java source files in the src directory. In addition to any other options you must specify the -verbose option. Why is there compiler errors?
-Execute the javadoc command required to generate the javadocs for all the Java source files in the src directory, the documentation should be generatd in the docs folder.
+Execute the javac command required to compile all the Java source files in the src directory. In addition to any other options 
+you must specify the -verbose option. Why is there compiler errors?
+Execute the javadoc command required to generate the javadocs for all the Java source files in the src directory, the 
+documentation should be generatd in the docs folder.
+
 Questions
 
 Answer the following questions and place in answer.txt The answer.txt file should be created in the project src directory.

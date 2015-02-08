@@ -1,0 +1,26 @@
+Write a declaration for an array variable called "people" that could be used to refer to an array of "Person" objects.
+Person[] people = new Person[100];
+
+Write a declaration for an array variable called "vacant" that could be used to refer to an array of "boolean" values.
+Boolean[] vacant = New Boolean[];
+
+In the previous two questions what is the values of the arrays?
+
+
+What is the classpath and what is its purpose?
+
+
+Below is a list of names/phrases, following that is a list of statements. Match the names/phrases to the statements. 
+Each name/phrase may be mapped to more than one statement, and each statement may have more than one name/phrase mapped to it.
+
+instance variable, argument, return type, getter, setter, pass by valve, method 
+
+A class can have any number of these.
+A method can have only one of these.
+This can be implicitly promoted.
+It really means 'make a copy'.
+Only setters should update these.
+A method can have many of these.
+I return something by definition.
+I can have many arguments.
+By definition, I take one argument.
