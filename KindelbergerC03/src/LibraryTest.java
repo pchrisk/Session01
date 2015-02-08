@@ -19,6 +19,7 @@ public class LibraryTest {
         printSomeEntries();
         returnSomeItems();
         printSomeEntries();
+        addMultipleEntries();
         printAllEntries();
     }
 
@@ -49,7 +50,14 @@ public class LibraryTest {
 
     }
     
+    void addMultipleEntries() {
+    	System.out.println("***********Add Multiple Entries*****************");
+    	 library.checkoutBook("003", "John Blue", "Ray Burr", "Tony Stark");
+    	 library.printCheckoutBooksByIsbn("003");
+    }
+    
     void printAllEntries() {
+    	System.out.println("***********Print All Entries*****************");
     	library.printAllCheckoutBooks();
     }
 }

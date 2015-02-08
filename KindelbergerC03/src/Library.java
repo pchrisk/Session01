@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.ListIterator;
+import java.util.Set;
 
 // Add the appropriate imports
 
@@ -16,11 +18,7 @@ class Library {
 	 */
 	 HashMap<String, ArrayList<String>> checkoutBooks; // complete this
 	// declaraion using generics
-	//HashMap<String, String> checkoutBooks; // complete this declaraion using
-											// generics
-
-	// ArrayList<String> patronList = new ArrayList<String>();
-
+	
 	/**
 	 * Constructor, initializes the entries HashMap.
 	 */
@@ -38,11 +36,9 @@ class Library {
 	public void checkoutBook(String isbn, String patron) {
 
 		// add your code here
-		//checkoutBooks.put(isbn, patron);
-		
+			
 		ArrayList<String> patronList = checkoutBooks.get(isbn);
-		//ArrayList<String> patronList = new ArrayList<String>();
-
+		
 	    // if list does not exist create it
 	    if(patronList == null) {
 	    	patronList = new ArrayList<String>();
@@ -54,9 +50,20 @@ class Library {
 	    }
 
 	}
+	
+	public void checkoutBook(String isbn, String... patron ) { //variable argument list
+		for (String p : patron) {
+			checkoutBook(isbn, p);
+		}
+	}
 
 	public void printCheckoutBooksByIsbn(String isbn) {
-		System.out.println(isbn + ": " + checkoutBooks.get(isbn));
+		ArrayList<String> patronList = checkoutBooks.get(isbn);
+		ListIterator<String> iterator = patronList.listIterator();
+		System.out.println("ISBN:\t"+isbn);
+		//System.out.println("\t\t"+iterator);
+		while (iterator.hasNext())
+			System.out.println("   " + iterator.next());
 
 	}
 
@@ -73,7 +80,10 @@ class Library {
 
 	}
 	public void printAllCheckoutBooks() {
-		
+		Set<String> isbnList = checkoutBooks.keySet();
+		for(String isbn: isbnList) {
+			printCheckoutBooksByIsbn(isbn);
+		}		
 	}
 
 }

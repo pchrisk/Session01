@@ -20,7 +20,8 @@ To complete the Library class you will need to:
 
 4. Implement the checkoutBook(String,String) method. This is an isbn for book and one patron thats checking it out
 
-5. Define and implement the checkoutBook(String,String variable argument list) method declaration and implement the method. This is an isbn for a book and any number of patrons that are checking it out.
+5. Define and implement the checkoutBook(String,String variable argument list) method declaration and implement the method.
+	 This is an isbn for a book and any number of patrons that are checking it out.
 
 6. Define and Implement the returnBook(String,String) method. Is isbn for book and person return the book
 
