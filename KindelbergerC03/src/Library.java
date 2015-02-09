@@ -3,7 +3,9 @@ import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Set;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class Library.
  *
  * @author Chris Kindelberger
  * @version 2/5/2015
@@ -25,7 +27,10 @@ class Library {
 	}
 
 	/**
-	 * add isbn book checked out to patron
+	 * add isbn book checked out to patron.
+	 *
+	 * @param isbn the isbn
+	 * @param patron the patron
 	 */
 	public void checkoutBook(String isbn, String patron) {
 
@@ -42,12 +47,23 @@ class Library {
 	    }
 	}
 	
+	/**
+	 * Checkout book.
+	 *
+	 * @param isbn the isbn
+	 * @param patron the patron
+	 */
 	public void checkoutBook(String isbn, String... patron ) { //variable argument list
 		for (String p : patron) {
 			checkoutBook(isbn, p);
 		}
 	}
 
+	/**
+	 * Prints the checkout books by isbn.
+	 *
+	 * @param isbn the isbn
+	 */
 	public void printCheckoutBooksByIsbn(String isbn) {
 		ArrayList<String> patronList = checkoutBooks.get(isbn);
 		ListIterator<String> iterator = patronList.listIterator();
@@ -56,6 +72,12 @@ class Library {
 			System.out.println("   " + iterator.next());
 	}
 
+	/**
+	 * Return book.
+	 *
+	 * @param isbn the isbn
+	 * @param patron the patron
+	 */
 	public void returnBook(String isbn, String patron) {
 		ArrayList<String> patronList = checkoutBooks.get(isbn);
 		if (patronList.contains(patron)) {
@@ -67,6 +89,9 @@ class Library {
 		}
 	}
 	
+	/**
+	 * Prints the all checkout books.
+	 */
 	public void printAllCheckoutBooks() {
 		Set<String> isbnList = checkoutBooks.keySet();
 		for(String isbn: isbnList) {

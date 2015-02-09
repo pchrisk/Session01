@@ -1,0 +1,260 @@
+Errors are from the compiling of the Junit test class. We are getting errors because the junit.jar is not
+a part of the src folder or java jdk and the compiler cannot find it and does not know about it.
+
+
+
+
+C:\Users\Chris\git\Session01\KindelbergerC03\src>javac -verbose -d ../classes Library.java
+[parsing started RegularFileObject[Library.java]]
+[parsing completed 63ms]
+[search path for source files: .]
+[search path for class files: C:\Program Files\Java\jdk1.7.0_71\jre\lib\resources.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\rt.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\sunrsasign.jar,C:\Progr
+am Files\Java\jdk1.7.0_71\jre\lib\jsse.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jce.jar,C:\Prog
+ram Files\Java\jdk1.7.0_71\jre\lib\charsets.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jfr.jar,C:
+\Program Files\Java\jdk1.7.0_71\jre\classes,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\access-bri
+dge-64.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\dnsns.jar,C:\Program Files\Java\jdk1.7.0_71
+\jre\lib\ext\jaccess.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\localedata.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\ext\sunec.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunjce_provi
+der.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunmscapi.jar,C:\Program Files\Java\jdk1.7.0_7
+1\jre\lib\ext\zipfs.jar,.]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ArrayList.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/HashMap.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ListIterator.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Set.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/Object.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/String.class)]]
+[checking Library]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/AutoCloseable.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/AbstractList.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/AbstractCollection.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Map.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/AbstractMap.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Collection.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/System.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/PrintStream.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/FilterOutputStream.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/OutputStream.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Iterator.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/Iterable.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/StringBuilder.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/CharSequence.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/Serializable.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/Comparable.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/AbstractStringBuilder.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/StringBuffer.class)]]
+[wrote RegularFileObject[..\classes\Library.class]]
+[total 1114ms]
+
+C:\Users\Chris\git\Session01\KindelbergerC03\src>
+
+C:\Users\Chris\git\Session01\KindelbergerC03\src>javac -verbose -d ../classes LibraryTest.java
+[parsing started RegularFileObject[LibraryTest.java]]
+[parsing completed 68ms]
+[search path for source files: .]
+[search path for class files: C:\Program Files\Java\jdk1.7.0_71\jre\lib\resources.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\rt.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\sunrsasign.jar,C:\Progr
+am Files\Java\jdk1.7.0_71\jre\lib\jsse.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jce.jar,C:\Prog
+ram Files\Java\jdk1.7.0_71\jre\lib\charsets.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jfr.jar,C:
+\Program Files\Java\jdk1.7.0_71\jre\classes,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\access-bri
+dge-64.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\dnsns.jar,C:\Program Files\Java\jdk1.7.0_71
+\jre\lib\ext\jaccess.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\localedata.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\ext\sunec.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunjce_provi
+der.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunmscapi.jar,C:\Program Files\Java\jdk1.7.0_7
+1\jre\lib\ext\zipfs.jar,.]
+LibraryTest.java:1: error: package org.junit does not exist
+import org.junit.Test;
+                ^
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/Object.class)]]
+[loading RegularFileObject[.\Library.java]]
+[parsing started RegularFileObject[.\Library.java]]
+[parsing completed 4ms]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ArrayList.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/HashMap.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ListIterator.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Set.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/String.class)]]
+LibraryTest.java:18: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class LibraryTest
+[checking LibraryTest]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/AutoCloseable.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/System.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/PrintStream.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/FilterOutputStream.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/OutputStream.class)]]
+[checking Library]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/AbstractList.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/AbstractCollection.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Map.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/AbstractMap.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Collection.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Iterator.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/Iterable.class)]]
+[total 1402ms]
+2 errors
+
+C:\Users\Chris\git\Session01\KindelbergerC03\src>
+
+
+
+
+C:\Users\Chris\git\Session01\KindelbergerC03\src>javadoc -verbose -package -d .\docs .\Library.java
+Loading source file .\Library.java...
+[parsing started RegularFileObject[.\Library.java]]
+[parsing completed 68ms]
+Constructing Javadoc information...
+[search path for source files: .]
+[search path for class files: C:\Program Files\Java\jdk1.7.0_71\jre\lib\resources.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\rt.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\sunrsasign.jar,C:\Progr
+am Files\Java\jdk1.7.0_71\jre\lib\jsse.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jce.jar,C:\Prog
+ram Files\Java\jdk1.7.0_71\jre\lib\charsets.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jfr.jar,C:
+\Program Files\Java\jdk1.7.0_71\jre\classes,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\access-bri
+dge-64.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\dnsns.jar,C:\Program Files\Java\jdk1.7.0_71
+\jre\lib\ext\jaccess.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\localedata.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\ext\sunec.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunjce_provi
+der.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunmscapi.jar,C:\Program Files\Java\jdk1.7.0_7
+1\jre\lib\ext\zipfs.jar,.]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ArrayList.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/HashMap.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ListIterator.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Set.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/Object.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/String.class)]]
+Standard Doclet version 1.7.0_71
+Building tree for all the packages and classes...
+Generating .\docs\Library.html...
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/Serializable.class)]]
+Generating .\docs\package-frame.html...
+Generating .\docs\package-summary.html...
+Generating .\docs\package-tree.html...
+Generating .\docs\constant-values.html...
+Building index for all the packages and classes...
+Generating .\docs\overview-tree.html...
+Generating .\docs\index-all.html...
+Generating .\docs\deprecated-list.html...
+Building index for all classes...
+Generating .\docs\allclasses-frame.html...
+Generating .\docs\allclasses-noframe.html...
+Generating .\docs\index.html...
+Generating .\docs\help-doc.html...
+[done in 3267 ms]
+
+C:\Users\Chris\git\Session01\KindelbergerC03\src>javadoc -verbose -package -d .\docs .\LibraryTest.j
+ava
+Loading source file .\LibraryTest.java...
+[parsing started RegularFileObject[.\LibraryTest.java]]
+[parsing completed 60ms]
+Constructing Javadoc information...
+.\LibraryTest.java:1: error: package org.junit does not exist
+import org.junit.Test;
+                ^
+.\LibraryTest.java:18: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class LibraryTest
+[search path for source files: .]
+[search path for class files: C:\Program Files\Java\jdk1.7.0_71\jre\lib\resources.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\rt.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\sunrsasign.jar,C:\Progr
+am Files\Java\jdk1.7.0_71\jre\lib\jsse.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jce.jar,C:\Prog
+ram Files\Java\jdk1.7.0_71\jre\lib\charsets.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\jfr.jar,C:
+\Program Files\Java\jdk1.7.0_71\jre\classes,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\access-bri
+dge-64.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\dnsns.jar,C:\Program Files\Java\jdk1.7.0_71
+\jre\lib\ext\jaccess.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\localedata.jar,C:\Program Fil
+es\Java\jdk1.7.0_71\jre\lib\ext\sunec.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunjce_provi
+der.jar,C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext\sunmscapi.jar,C:\Program Files\Java\jdk1.7.0_7
+1\jre\lib\ext\zipfs.jar,.]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/Object.class)]]
+[loading RegularFileObject[.\Library.java]]
+[parsing started RegularFileObject[.\Library.java]]
+[parsing completed 12ms]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ArrayList.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/HashMap.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/ListIterator.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/util/Set.class)]]
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/lang/String.class)]]
+Standard Doclet version 1.7.0_71
+Building tree for all the packages and classes...
+Generating .\docs\LibraryTest.html...
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+[loading ZipFileIndexFileObject[C:\Program Files\Java\jdk1.7.0_71\lib\ct.sym(META-INF/sym/rt.jar/jav
+a/io/Serializable.class)]]
+Generating .\docs\package-frame.html...
+Generating .\docs\package-summary.html...
+Generating .\docs\package-tree.html...
+Generating .\docs\constant-values.html...
+Building index for all the packages and classes...
+Generating .\docs\overview-tree.html...
+Generating .\docs\index-all.html...
+javadoc: warning - Class Test not found.
+Generating .\docs\deprecated-list.html...
+javadoc: warning - Class Test not found.
+Building index for all classes...
+Generating .\docs\allclasses-frame.html...
+Generating .\docs\allclasses-noframe.html...
+Generating .\docs\index.html...
+Generating .\docs\help-doc.html...
+[done in 3129 ms]
+7 warnings
+
+C:\Users\Chris\git\Session01\KindelbergerC03\src>
