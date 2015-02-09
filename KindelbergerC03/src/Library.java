@@ -60,7 +60,7 @@ class Library {
 		ArrayList<String> patronList = checkoutBooks.get(isbn);
 		if (patronList.contains(patron)) {
 			patronList.remove(patron);
-			checkoutBooks.replace(isbn, patronList);
+			checkoutBooks.put(isbn, patronList);
 			System.out.println("Book "+ isbn +": returned by " + patron);
 		} else {
 			System.out.println(patron +" has not checkout book " + isbn);
