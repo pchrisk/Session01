@@ -1,5 +1,7 @@
 package edu.washington.ext;
 
+import java.util.ArrayList;
+
 /**
  * A class that maintains information on a book. This might form part of a
  * larger application such as a library system, for instance.
@@ -137,12 +139,16 @@ class Book {
 		} else {
 			System.out.println(refNumber);
 		}
+		System.out.println(description);
 	}
 	/**
 	*method returns the total number of words in the description.
 	*/
 	public int getTotalWordsInDescription() {
 		int totalWords = 0;
+		String[] descriptionSplit = description.replaceAll("\\p{P}", "").split("\\s");
+		totalWords = descriptionSplit.length;
+		
 		return totalWords;
 		
 	}
@@ -163,6 +169,13 @@ class Book {
 	 */
 	public int getTotalWordInDescription(String word) {
 		int totalInstances = 0;
+		String[] descriptionSplit = description.replaceAll("\\p{Punct}", "").split("\\s");
+		for (String x : descriptionSplit) {
+			if(x.toLowerCase().equals(word)){
+				totalInstances++;
+			}
+			
+		}
 		return totalInstances ;
 		
 	}
