@@ -46,6 +46,7 @@ public class BookTest02 {
 		courseText.printBinding();
 		courseText.printDetails();
 		System.out.println("Total Words:\t" + courseText.getTotalWordsInDescription());
+		System.out.println("Total Unique Words:\t" + courseText.getTotalUniqueWordsInDescription());
 		System.out.println(courseText.getTotalWordInDescription("rights"));
 		System.out.println(courseText.getTotalWordInDescription("to"));
 	}

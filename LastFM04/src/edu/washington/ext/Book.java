@@ -1,6 +1,8 @@
 package edu.washington.ext;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A class that maintains information on a book. This might form part of a
@@ -158,6 +160,14 @@ class Book {
 	 */
 	public int getTotalUniqueWordsInDescription() {
 		int totalUnique = 0;
+		String[] descriptionSplit = description.toLowerCase().replaceAll("\\p{Punct}", "").split("\\s");
+		Set<String> uniqueWords = new HashSet<String>();
+
+		for (String word : descriptionSplit) {
+			System.out.println(word);
+		    uniqueWords.add(word);
+		}
+		totalUnique = uniqueWords.size();
 		return totalUnique;
 		
 	}
