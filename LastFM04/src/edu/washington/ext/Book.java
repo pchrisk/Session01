@@ -11,25 +11,28 @@ package edu.washington.ext;
 class Book {
 
 	// The fields.
-	String author = "";
-	String title = "";
-	String publisher = "";
-	Binding binding;
-	int pages = 0;
-	String refNumber = "";
+	private String author = null;
+	private String title = null;
+	private String publisher = null;
+	private Binding binding;
+	private int pages = 0;
+	private String refNumber = null;
+	private String description = null; //description of the Book
+	
 
 	/**
 	 * Constructor. Set the author, title and binding fields when this object is
 	 * constructed.
 	 */
 	Book(String bookAuthor, String bookTitle, String bookPublisher,
-			Binding bindingType, int bookPages) {
+			Binding bindingType, int bookPages, String bookDescription) {
 		author = bookAuthor;
 		title = bookTitle;
 		publisher = bookPublisher;
 		binding = bindingType;
 		pages = bookPages;
-		refNumber = ""; 
+		refNumber = "";
+		description = bookDescription;
 		
 	}
 
@@ -82,6 +85,20 @@ class Book {
 		}
 	}
 	
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public void printAuthor() {
 		System.out.println(getAuthor());
 	}
@@ -94,31 +111,8 @@ class Book {
 		System.out.println(getPublisher());
 	}
 	
-	public void printBinding() {
-		
-		System.out.println(binding.getBindingType());
-//		String binding2 = "";
-//				
-//		switch (binding) {
-//		case HARDCOVER:
-//			binding2 = "Hardcover";
-//			break;
-//		case PAPERBACK:
-//			binding2 = "Paperback";
-//			break;
-//		case EPUB:
-//			binding2 = "Epub";
-//			break;
-//		case MOBI:
-//			binding2 = "Mobi";
-//			break;
-//		case APK:
-//			binding2 = "Apk";
-//			break;
-//			
-//		}
-//				
-//		System.out.println(binding2);
+	public void printBinding() {		
+		System.out.println(binding.getBindingType());		
 	}
 	
 	public void printPages() {
@@ -144,5 +138,35 @@ class Book {
 			System.out.println(refNumber);
 		}
 	}
+	/**
+	*method returns the total number of words in the description.
+	*/
+	public int getTotalWordsInDescription() {
+		int totalWords = 0;
+		return totalWords;
+		
+	}
+	/**
+	 * , returns the total number of unique words in the description. 
+	 * Tip - a HashSet may be useful for identifying the unique words.
+	 */
+	public int getTotalUniqueWordsInDescription() {
+		int totalUnique = 0;
+		return totalUnique;
+		
+	}
+	
+	/**
+	 *  this method takes one string parameter consisting of one word to 
+	 *  be counted in the description. The return value consists of how may 
+	 *  times the specified word occurs in the Book's description.
+	 */
+	public int getTotalWordInDescription(String word) {
+		int totalInstances = 0;
+		return totalInstances ;
+		
+	}
+	
+	
 
 }
