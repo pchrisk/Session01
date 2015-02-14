@@ -20,7 +20,7 @@ public class BookTest {
 	 * @throws java.lang.Exception
 	 */
 	@Before
-	public void setUp() throws Exception {		
+	public void setupclass() throws Exception {		
 		courseText = new Book("Cay Horstman",
 				"Core Java Vol 1, 9th Ed", "Prentice Hall",
 				Binding.HARDCOVER, 1234, "We hold these truths to be self-evident, that "
@@ -115,7 +115,9 @@ public class BookTest {
 	 */
 	@Test
 	public void testSetDescription() {
-		fail("Not yet implemented");
+		String newDescription = "This is the new description";
+		courseText.setDescription(newDescription);
+		assertEquals(newDescription, courseText.getDescription());
 	}
 
 	/**
@@ -123,7 +125,8 @@ public class BookTest {
 	 */
 	@Test
 	public void testGetTotalWordsInDescription() {
-		fail("Not yet implemented");
+		int total = 110;
+		assertEquals(total, courseText.getTotalWordsInDescription());
 	}
 
 	/**
@@ -131,7 +134,8 @@ public class BookTest {
 	 */
 	@Test
 	public void testGetTotalUniqueWordsInDescription() {
-		fail("Not yet implemented");
+		int total = 71;
+		assertEquals(total, courseText.getTotalUniqueWordsInDescription());
 	}
 
 	/**
@@ -139,7 +143,12 @@ public class BookTest {
 	 */
 	@Test
 	public void testGetTotalWordInDescription() {
-		fail("Not yet implemented");
+		String word1 = "rights";
+		int word1Total = 2;
+		String word2 = "to";
+		int word2Total = 7;
+		assertEquals(word1Total, courseText.getTotalWordInDescription(word1));
+		assertEquals(word2Total, courseText.getTotalWordInDescription(word2));
 	}
 
 }

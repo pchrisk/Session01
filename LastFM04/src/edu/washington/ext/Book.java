@@ -163,7 +163,7 @@ class Book {
 		Set<String> uniqueWords = new HashSet<String>();
 
 		for (String word : descriptionSplit) {
-			System.out.println(word);
+//			System.out.println(word);
 		    uniqueWords.add(word);
 		}
 		totalUnique = uniqueWords.size();
