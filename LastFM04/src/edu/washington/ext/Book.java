@@ -140,6 +140,7 @@ class Book {
 		} else {
 			System.out.println(refNumber);
 		}
+		System.out.print("Description: ");
 		System.out.println(description);
 	}
 	/**
