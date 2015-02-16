@@ -5,25 +5,8 @@ package edu.washington.ext;
  * The Class BookApp.
  */
 public class BookApp {
-	
 	/** The course text. */
-	static Book courseText;
-	
-	/** The author. */
-	static String author = "Cay Horstman";
-	
-	/** The title. */
-	static String title = "Core Java Vol 1, 9th Ed";
-	
-	/** The publisher. */
-	static String publisher = "Prentice Hall";
-	
-	/** The binding. */
-	static Binding binding = Binding.HARDCOVER;
-	
-	/** The pages. */
-	static int pages =  1234;
-	
+	static Book courseText;	
 
 	/**
 	 * The main method.
@@ -32,6 +15,22 @@ public class BookApp {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		/** The author. */
+		String author = "Cay Horstman";
+		
+		/** The title. */
+		String title = "Core Java Vol 1, 9th Ed";
+		
+		/** The publisher. */
+		String publisher = "Prentice Hall";
+		
+		/** The binding. */
+		Binding binding = Binding.HARDCOVER;
+		
+		/** The pages. */
+		int pages =  1234;
+		
 		String inputDesciption = null;
 		String inputWord = null;
 		
@@ -39,15 +38,16 @@ public class BookApp {
 			inputDesciption = args[0];			
 		} else if (args.length == 2) {
 			inputDesciption = args[0];
-			inputWord = args[1]; //optional argument, used for finding the number of occurance of the given word.			
+			inputWord = args[1]; //optional argument, used for finding the number of occurrence of the given word.			
 		} else {
 			System.out.println("This app requires two parameters. The first is the book description. \nThe second (optional)"
 					+ " parameter is a word that you would like to determine \nhow many times it is used in the description"
 					+ "\nUsage: BookApp \"Book Description\" \"word\"{optional}");
 			System.exit(1);
 		}
-		
-		execute(inputDesciption, inputWord);		
+		courseText = new Book(author, title, publisher, binding, pages, inputDesciption);
+		printDetails(inputWord);
+//		execute(inputDesciption, inputWord);		
 	}
 
 	/**
@@ -56,10 +56,10 @@ public class BookApp {
 	 * @param inputDesciption the input description
 	 * @param inputWord the input word
 	 */
-	private static void execute(final String inputDescription, final String inputWord) {
-		createBook(inputDescription);
-		printDetails(inputWord);
-	}
+//	private static void execute(final String inputDescription, final String inputWord) {
+//		createBook(inputDescription);
+//		printDetails(inputWord);
+//	}
 
 	/**
 	 * Prints the details.
@@ -81,10 +81,10 @@ public class BookApp {
 	 *
 	 * @param description the description
 	 */
-	private static void createBook(String description) {
-		courseText = new Book(author, title, publisher, binding, pages,description);
-		
-	}
+//	private static void createBook(String description) {
+//		courseText = new Book(author, title, publisher, binding, pages,description);
+//		
+//	}
 	
 	
 }
