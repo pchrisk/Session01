@@ -38,55 +38,7 @@ public class BookTest {
 						+ "organizing its powers in such form, as to them "
 						+ "shall seem most likely to effect their Safety "
 						+ "and Happiness.");
-	}
-
-	/**
-	 * Test method for {@link edu.washington.ext.Book#Book(java.lang.String, java.lang.String, java.lang.String, edu.washington.ext.Binding, int, java.lang.String)}.
-	 */
-//	@Test
-//	public void testBook() {
-//		fail("Not yet implemented");
-//	}
-
-	/**
-	 * Test method for {@link edu.washington.ext.Book#setAuthor(java.lang.String)}.
-	 */
-//	@Test
-//	public void testGetAuthor() {
-//		assertEquals("Cay Horstman", courseText.getAuthor());
-//	}
-
-	/**
-	 * Test method for {@link edu.washington.ext.Book#setTitle(java.lang.String)}.
-	 */
-//	@Test
-//	public void testSetTitle() {
-//		fail("Not yet implemented");
-//	}
-
-	/**
-	 * Test method for {@link edu.washington.ext.Book#setPublisher(java.lang.String)}.
-	 */
-//	@Test
-//	public void testSetPublisher() {
-//		fail("Not yet implemented");
-//	}
-
-	/**
-	 * Test method for {@link edu.washington.ext.Book#setBinding(edu.washington.ext.Binding)}.
-	 */
-//	@Test
-//	public void testSetBinding() {
-//		fail("Not yet implemented");
-//	}
-
-	/**
-	 * Test method for {@link edu.washington.ext.Book#setRefNumber(java.lang.String)}.
-	 */
-//	@Test
-//	public void testSetRefNumber() {
-//		fail("Not yet implemented");
-//	}
+	}	
 
 	/**
 	 * Test method for {@link edu.washington.ext.Book#getDescription()}.

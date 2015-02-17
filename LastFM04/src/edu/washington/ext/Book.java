@@ -244,7 +244,7 @@ class Book {
 	}
 	
 	/**
-	 * method returns the total number of words in the description.
+	 * Returns the total number of words in the description.
 	 *
 	 * @return the total words in description
 	 */
@@ -258,8 +258,7 @@ class Book {
 	}
 	
 	/**
-	 * , returns the total number of unique words in the description. 
-	 * Tip - a HashSet may be useful for identifying the unique words.
+	 * Returns the total number of unique words in the description. 
 	 *
 	 * @return the total unique words in description
 	 */
@@ -278,7 +277,7 @@ class Book {
 	}
 	
 	/**
-	 *  this method takes one string parameter consisting of one word to 
+	 *  This method takes one string parameter consisting of one word to 
 	 *  be counted in the description. The return value consists of how may 
 	 *  times the specified word occurs in the Book's description.
 	 *

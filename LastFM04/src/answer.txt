@@ -1,0 +1,10 @@
+Investigate the "String" classes documentation plus a couple of others. What is the format/Structure ? 
+What sections are common to All class descriptions?
+
+
+
+Describe what startsWith method on String class does.
+
+
+Is there a method in the String class that tests whether a string ends with a given suffix? 
+If so, what is the method signature including return type and access specifier?
