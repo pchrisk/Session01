@@ -1,8 +1,13 @@
 package edu.washington.ext;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class BookApp.
+ * Application for creating a Book, by passing parameters of Description text
+ * and an optional word to search the description for.
+ * 
+ * @author Chris Kindelberger
+ * @version 2/17/2015
  */
 public class BookApp {
 	/** The course text. */
@@ -13,9 +18,8 @@ public class BookApp {
 	 *
 	 * @param args the arguments
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	public static void main(final String[] args) {
+			
 		/** The author. */
 		String author = "Cay Horstman";
 		

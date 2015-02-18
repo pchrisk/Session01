@@ -3,7 +3,6 @@ package edu.washington.ext;
 import java.util.HashSet;
 import java.util.Set;
 
-// TODO: Auto-generated Javadoc
 /**
  * A class that maintains information on a book. This might form part of a
  * larger application such as a library system, for instance.
@@ -34,7 +33,7 @@ class Book {
 	private String refNumber = null;
 	
 	/** The description. */
-	private String description = null; //description of the Book
+	private String description = null;
 	
 
 	/**
@@ -48,8 +47,8 @@ class Book {
 	 * @param bookPages the book pages
 	 * @param bookDescription the book description
 	 */
-	Book(String bookAuthor, String bookTitle, String bookPublisher,
-			Binding bindingType, int bookPages, String bookDescription) {
+	Book(final String bookAuthor, final String bookTitle, final String bookPublisher,
+			final Binding bindingType, final int bookPages, final String bookDescription) {
 		author = bookAuthor;
 		title = bookTitle;
 		publisher = bookPublisher;
@@ -250,7 +249,7 @@ class Book {
 	 */
 	public int getTotalWordsInDescription() {
 		int totalWords = 0;
-		String[] descriptionSplit = description.replaceAll("\\p{P}", "").split("\\s");
+		String[] descriptionSplit = description.replaceAll("\\p{Punct}", "").split("\\s");
 		totalWords = descriptionSplit.length;
 		
 		return totalWords;

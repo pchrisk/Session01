@@ -1,10 +1,18 @@
 Investigate the "String" classes documentation plus a couple of others. What is the format/Structure ? 
 What sections are common to All class descriptions?
 
+Parent Class
+All Implemented Interfaces
+Description, which version it was added, and a "See also" section
+Summaries of fields, constructors, and methods
+Details of fields, contructors, and methods
 
 
 Describe what startsWith method on String class does.
+Tests if this string starts with the specified prefix. Could be used to determine if your string has a beginning letter of z,
+as an example.
 
 
-Is there a method in the String class that tests whether a string ends with a given suffix? 
+Is there a method in the String class that tests whether a string ends with a given suffix? Yes
 If so, what is the method signature including return type and access specifier?
+public boolean endsWith(String suffix)

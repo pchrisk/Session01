@@ -1,6 +1,3 @@
-/**
- * 
- */
 package edu.washington.ext;
 
 import static org.junit.Assert.*;
@@ -9,18 +6,21 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author Chris
+ * @author Chris Kindelberger
+ * @version 2/17/2015
  *
  */
 public class BookTest {
-
+	/** The course text. */
 	Book courseText;
 
 	/**
-	 * @throws java.lang.Exception
+	 * Setupclass.
+	 *
+	 * @throws Exception the exception
 	 */
 	@Before
-	public void setupclass() throws Exception {		
+	public final void setupclass() throws Exception {		
 		courseText = new Book("Cay Horstman",
 				"Core Java Vol 1, 9th Ed", "Prentice Hall",
 				Binding.HARDCOVER, 1234, "We hold these truths to be self-evident, that "
@@ -44,7 +44,7 @@ public class BookTest {
 	 * Test method for {@link edu.washington.ext.Book#getDescription()}.
 	 */
 	@Test
-	public void testGetDescription() {
+	public final void testGetDescription() {
 		assertEquals("We hold these truths to be self-evident, that "
 						+ "all men are created equal, that they are "
 						+ "endowed by their Creator with certain "
@@ -66,7 +66,7 @@ public class BookTest {
 	 * Test method for {@link edu.washington.ext.Book#setDescription(java.lang.String)}.
 	 */
 	@Test
-	public void testSetDescription() {
+	public final void testSetDescription() {
 		String newDescription = "This is the new description";
 		courseText.setDescription(newDescription);
 		assertEquals(newDescription, courseText.getDescription());
@@ -76,7 +76,7 @@ public class BookTest {
 	 * Test method for {@link edu.washington.ext.Book#getTotalWordsInDescription()}.
 	 */
 	@Test
-	public void testGetTotalWordsInDescription() {
+	public final void testGetTotalWordsInDescription() {
 		int total = 110;
 		assertEquals(total, courseText.getTotalWordsInDescription());
 	}
@@ -85,7 +85,7 @@ public class BookTest {
 	 * Test method for {@link edu.washington.ext.Book#getTotalUniqueWordsInDescription()}.
 	 */
 	@Test
-	public void testGetTotalUniqueWordsInDescription() {
+	public final void testGetTotalUniqueWordsInDescription() {
 		int total = 71;
 		assertEquals(total, courseText.getTotalUniqueWordsInDescription());
 	}
@@ -94,7 +94,7 @@ public class BookTest {
 	 * Test method for {@link edu.washington.ext.Book#getTotalWordInDescription(java.lang.String)}.
 	 */
 	@Test
-	public void testGetTotalWordInDescription() {
+	public final void testGetTotalWordInDescription() {
 		String word1 = "rights";
 		int word1Total = 2;
 		String word2 = "to";
