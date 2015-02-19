@@ -11,7 +11,7 @@ import java.util.Set;
  * @version (1/31/2015)
  */
 
-class Book {
+public class Book {
 
 	// The fields.
 	/** The author. */
@@ -47,7 +47,7 @@ class Book {
 	 * @param bookPages the book pages
 	 * @param bookDescription the book description
 	 */
-	Book(final String bookAuthor, final String bookTitle, final String bookPublisher,
+	public Book(final String bookAuthor, final String bookTitle, final String bookPublisher,
 			final Binding bindingType, final int bookPages, final String bookDescription) {
 		author = bookAuthor;
 		title = bookTitle;
@@ -250,7 +250,11 @@ class Book {
 	public int getTotalWordsInDescription() {
 		int totalWords = 0;
 		String[] descriptionSplit = description.replaceAll("\\p{Punct}", "").split("\\s");
-		totalWords = descriptionSplit.length;
+		if (descriptionSplit[0].equals("")) {
+			totalWords = 0;
+		} else {
+			totalWords = descriptionSplit.length;
+		}
 		
 		return totalWords;
 		
@@ -270,7 +274,11 @@ class Book {
 //			System.out.println(word);
 		    uniqueWords.add(word);
 		}
-		totalUnique = uniqueWords.size();
+		if (descriptionSplit[0].equals("")) {
+			totalUnique = 0;
+		} else {
+			totalUnique = descriptionSplit.length;
+		}
 		return totalUnique;
 		
 	}
@@ -287,7 +295,7 @@ class Book {
 		int totalInstances = 0;
 		String[] descriptionSplit = description.replaceAll("\\p{Punct}", "").split("\\s");
 		for (String x : descriptionSplit) {
-			if (x.toLowerCase().equals(word)) {
+			if (x.toLowerCase().equals(word.toLowerCase())) {
 				totalInstances++;
 			}
 			
