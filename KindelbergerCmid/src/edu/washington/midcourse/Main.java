@@ -13,7 +13,7 @@ public class Main {
 			//Rot13.encrypt(args[0]);
 			System.out.println("Converted Text: \"" + Rot13.encrypt(args[0]) + "\"");
 		} else {
-			System.out.println("Usage: Main \"Value to encrypt\"");
+			System.err.println("Usage: java Main \"Value to encrypt\"");
 		}
 		
 		
