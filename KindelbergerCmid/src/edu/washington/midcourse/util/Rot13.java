@@ -3,51 +3,37 @@ package edu.washington.midcourse.util;
 public class Rot13 {
 	
 	private static int rotValue = 13;
-	
-	
-	static char[] cc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 		
 	public static String encrypt(final String encryptOrig) {
-		String encyptedString = "False";
+		//String encyptedString = "";
 		char[] orig = encryptOrig.toCharArray();
 		char[] converted = new char[orig.length];
-		int newLetter = 0;
+		int convLetter = 0;
 		
 		for (int c = 0; c < orig.length; c++) {
-			newLetter = (int)orig[c] + rotValue;
+			int origInt = (int)orig[c];
+			convLetter = origInt;
+			//convLetter = origInt + rotValue;
 			//65-90 caps
 			//97-122 lc
-			if ((newLetter > 90) && (newLetter < 97)) {
-				newLetter = newLetter - 65;
-			} else if (newLetter > 122) {
-				newLetter = newLetter - 97;
-			}
-			converted[c] = (char)newLetter;
-		}		
-		encyptedString = new String(converted);
-		
-		
-//		String encyptedString = "False";
-//		char[] ls = encryptThis.toCharArray();
-//		char[] newls = new char[ls.length];
-//		for (int c = 0; c < ls.length; c++) {
-//			for (int i = 0; i < cc.length; i++) {
-//				if (ls[c] == cc[i]) {
-//					int j = i + 13;
-//					System.out.println(ls[c]);
-//					System.out.println(cc[j]);
-//					newls[c] = cc[j];
-//				}
-//				
-//			}
-//		}
-//		encyptedString = new String(newls);
-		
-//		if (Character.isUpperCase(ls[0])) {
-//			encyptedString = "True";
-//		}
 			
-		return encyptedString;
+			if ((origInt >= 65) && (origInt <= 90)) {
+				convLetter = origInt + rotValue;
+				if (convLetter > 90) {
+					convLetter = convLetter - 26;
+				}	
+			} else if ((origInt >= 97) && (origInt <= 122)) {
+				convLetter = origInt + rotValue;
+				if (convLetter > 122) {
+					convLetter = convLetter - 26;
+				}
+			}
+				
+			converted[c] = (char)convLetter;
+		}		
+		//encyptedString = new String(converted);
+					
+		return new String(converted);
 		
 	}
 

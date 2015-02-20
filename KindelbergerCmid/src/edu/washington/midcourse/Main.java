@@ -7,7 +7,7 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		System.out.println(Rot13.encrypt("AAaa "));
+		System.out.println(Rot13.encrypt("Hello there. Testing, testing!"));
 		
 		
 	}
