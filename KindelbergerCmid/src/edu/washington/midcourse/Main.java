@@ -2,9 +2,7 @@ package edu.washington.midcourse;
 
 import edu.washington.midcourse.util.Rot13;;
 
-public class Main {
-	
-	
+public class Main {	
 	
 	public static void main(String[] args) {
 		
@@ -14,9 +12,7 @@ public class Main {
 			System.out.println("Converted Text: \"" + Rot13.encrypt(args[0]) + "\"");
 		} else {
 			System.out.println("Usage: Main \"Value to encrypt\"");
-		}
-		
-		
+		}		
 		
 	}
 
