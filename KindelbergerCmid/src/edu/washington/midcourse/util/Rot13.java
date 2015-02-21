@@ -1,9 +1,20 @@
 package edu.washington.midcourse.util;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Rot13.
+ */
 public class Rot13 {
 	
+	/** The rot value. */
 	private static int rotValue = 13;
 		
+	/**
+	 * Encrypt.
+	 *
+	 * @param encryptOrig the encrypt orig
+	 * @return the string
+	 */
 	public static String encrypt(final String encryptOrig) {
 		
 		char[] orig = encryptOrig.toCharArray();
@@ -20,6 +31,13 @@ public class Rot13 {
 		
 	}
 
+	/**
+	 * Calculate.
+	 *
+	 * @param convInt the conv int
+	 * @param origInt the orig int
+	 * @return the int
+	 */
 	private static int calculate(int convInt, int origInt) {
 		//65-90 caps
 		//97-122 lc

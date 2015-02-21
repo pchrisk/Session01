@@ -18,7 +18,6 @@ public class Rot13Test {
 		assertEquals(convText, Rot13.encrypt(origText));
 		assertEquals(nonText, Rot13.encrypt(nonText));
 		
-		//fail("Not yet implemented");
 	}
 
 }

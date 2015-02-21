@@ -2,8 +2,17 @@ package edu.washington.midcourse;
 
 import edu.washington.midcourse.util.Rot13;;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Main.
+ */
 public class Main {	
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		
 		if (args.length == 1) {
