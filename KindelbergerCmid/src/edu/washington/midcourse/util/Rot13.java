@@ -39,9 +39,12 @@ public class Rot13 {
 	 * @return the int
 	 */
 	private static int calculate(int convInt, int origInt) {
-		//65-90 caps
-		//97-122 lc
-		
+		/**
+		 * Asci ranges for alphas
+		 * 65-90 Upper Case letters A-Z
+		 * 97-122 Lower case letters a-z
+		 */
+				
 		if ((origInt >= 65) && (origInt <= 90)) {
 			convInt = origInt + rotValue;
 			if (convInt > 90) {
