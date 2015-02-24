@@ -28,7 +28,7 @@ public class Rot13 {
 		}		
 						
 		return new String(converted);
-		
+
 	}
 
 	/**
