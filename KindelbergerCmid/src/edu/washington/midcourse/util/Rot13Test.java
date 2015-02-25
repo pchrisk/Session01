@@ -4,43 +4,49 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * The Class Rot13Test.
+ */
 public class Rot13Test {
 	
+	/** The orig text. */
 	String origText = "Hello there. Testing, testing!";
+	
+	/** The conv text. */
 	String convText = "Uryyb gurer. Grfgvat, grfgvat!";
 	
+	/** The non text. */
 	String nonText = ",<.>/?;:'[{]}!@#$%^&*()-_=+";
 	
+	/** The empty text. */
 	String emptyText = "";
 	
 	
 	
 
+	/**
+	 * Test Text.
+	 */
 	@Test
-	public void testEncrypt() {
-		//Rot13.encrypt(encryptOrig)
+	public void testText() {
 		assertEquals(convText, Rot13.encrypt(origText));
-//		assertEquals(nonText, Rot13.encrypt(nonText));
-//		assertEquals(null, Rot13.encrypt(emptyText));
 		
-		//fail("Not yet implemented");
 	}
 	
+	/**
+	 * Test NonText.
+	 */
 	@Test
-	public void testEncrypt1() {
-		//Rot13.encrypt(encryptOrig)
-//		assertEquals(convText, Rot13.encrypt(origText));
+	public void testNonText() {
 		assertEquals(nonText, Rot13.encrypt(nonText));
-//		assertEquals(null, Rot13.encrypt(emptyText));
-		
-		//fail("Not yet implemented");
+
 	}
 	
+	/**
+	 * Test Empty.
+	 */
 	@Test
-	public void testEncrypt2() {
-		//Rot13.encrypt(encryptOrig)
-//		assertEquals(convText, Rot13.encrypt(origText));
-//		assertEquals(nonText, Rot13.encrypt(nonText));
+	public void testEmpty() {
 		System.out.println(Rot13.encrypt(emptyText));
 		assertEquals(emptyText, Rot13.encrypt(emptyText));
 		

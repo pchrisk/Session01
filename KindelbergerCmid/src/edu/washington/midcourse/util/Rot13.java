@@ -17,6 +17,11 @@ public class Rot13 {
 	 */
 	public static String encrypt(final String encryptOrig) {
 		
+		if (encryptOrig.isEmpty()) {
+			return "";
+			
+		}
+		
 		char[] orig = encryptOrig.toCharArray();
 		char[] converted = new char[orig.length];
 		int convInt = 0;
@@ -28,7 +33,7 @@ public class Rot13 {
 		}		
 						
 		return new String(converted);
-
+//		}
 	}
 
 	/**
