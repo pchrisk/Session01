@@ -7,6 +7,11 @@ public class LibraryEmployee implements Employee {
 	private String name = null;
 	private double currentSales = 0;
 	
+	public LibraryEmployee(String name){
+		
+	}
+	
+	
 
 	@Override
 	public String getName() {
