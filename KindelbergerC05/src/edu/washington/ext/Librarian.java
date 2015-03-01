@@ -13,6 +13,30 @@ public class Librarian implements Employee {
 		
 	}
 
+	public static double getBonusRate() {
+		return bonusRate;
+	}
+
+	public static void setBonusRate(double bonusRate) {
+		Librarian.bonusRate = bonusRate;
+	}
+
+	public double getCurrentLibraryTotals() {
+		return currentLibraryTotals;
+	}
+
+	public void setCurrentLibraryTotals(double currentLibraryTotals) {
+		this.currentLibraryTotals = currentLibraryTotals;
+	}
+
+	public double getCurrentLibrarianTotals() {
+		return currentLibrarianTotals;
+	}
+
+	public void setCurrentLibrarianTotals(double currentLibrarianTotals) {
+		this.currentLibrarianTotals = currentLibrarianTotals;
+	}
+
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub

@@ -10,9 +10,17 @@ public class LibraryAssociate extends LibraryEmployee {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public double getCommisionRate() {
+		return commisionRate;
+	}
+
+	public void setCommisionRate(double commisionRate) {
+		this.commisionRate = commisionRate;
+	}
+
 	public double calculatePay() {
 		// TODO Auto-generated method stub
-		return 0;
+		return super.calculatePay() + commisionRate * super.getCurrentSales();
 	}
 
 }

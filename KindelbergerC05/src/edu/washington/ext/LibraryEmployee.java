@@ -15,14 +15,37 @@ public class LibraryEmployee implements Employee {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return name;
+	}
+
+	public double getCurrentHours() {
+		return currentHours;
+	}
+
+	public void setCurrentHours(double currentHours) {
+		this.currentHours = currentHours;
+	}
+
+	public double getHourlyRate() {
+		return hourlyRate;
+	}
+
+	public void setHourlyRate(double hourlyRate) {
+		this.hourlyRate = hourlyRate;
+	}
+
+	public double getCurrentSales() {
+		return currentSales;
+	}
+
+	public void setCurrentSales(double currentSales) {
+		this.currentSales = currentSales;
 	}
 
 	@Override
 	public double calculatePay() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return hourlyRate * currentHours;
 	}
 
 }
