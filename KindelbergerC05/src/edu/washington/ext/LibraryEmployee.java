@@ -8,6 +8,8 @@ public class LibraryEmployee implements Employee {
 	private double currentSales = 0;
 	
 	public LibraryEmployee(String name){
+		this.name = name;
+		
 		
 	}
 	

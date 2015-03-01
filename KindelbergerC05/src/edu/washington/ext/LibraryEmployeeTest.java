@@ -10,14 +10,18 @@ public class LibraryEmployeeTest {
 	
 	LibraryEmployee LE = new LibraryEmployee("bob");	
 	double bobPay = 1680.00;
+	double bobHours = 160.00;
+	double bobHourlyRate = 10.50;
+	double bobCurrentSales = 500.00;
+	
 
 	@Before
 	public void setUpefore() throws Exception {
 		
-		LE.setHourlyRate(10.50);
-		LE.setCurrentHours(160.00);
-		LE.setCurrentSales(500.00);
-		
+		LE.setHourlyRate(bobHourlyRate);
+		LE.setCurrentHours(bobHours);
+		LE.setCurrentSales(bobCurrentSales);
+				
 	}
 
 	@After
@@ -31,12 +35,12 @@ public class LibraryEmployeeTest {
 
 	@Test
 	public void testGetName() {
-		fail("Not yet implemented");
+		assertEquals("bob", LE.getName());
 	}
 
 	@Test
 	public void testGetCurrentHours() {
-		fail("Not yet implemented");
+		assertEquals(bobHours, LE.getCurrentHours(), .0);
 	}
 
 	@Test
@@ -46,7 +50,7 @@ public class LibraryEmployeeTest {
 
 	@Test
 	public void testGetHourlyRate() {
-		fail("Not yet implemented");
+		assertEquals(bobHourlyRate, LE.getHourlyRate(), .0);
 	}
 
 	@Test
@@ -56,7 +60,7 @@ public class LibraryEmployeeTest {
 
 	@Test
 	public void testGetCurrentSales() {
-		fail("Not yet implemented");
+		assertEquals(bobCurrentSales, LE.getCurrentSales(), .0);;
 	}
 
 	@Test
@@ -67,7 +71,11 @@ public class LibraryEmployeeTest {
 	@Test
 	public void testCalculatePay() {
 		System.out.println(LE.getName());
-		assertEquals(bobPay, LE.calculatePay());
+		System.out.println(LE.getHourlyRate());
+		System.out.println(LE.getCurrentHours());
+		System.out.println(LE.calculatePay());
+
+		assertEquals(bobPay, LE.calculatePay(), .0);
 	}
 
 }

@@ -7,9 +7,24 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class LibraryAssociateTest {
+	
+	double trishPay = 2025.00;
+	double trishHours = 138.00;
+	double trishHourlyRate = 12.50;
+	double trishCurrentSales = 15000.00;
+	double trishCommisionRate = .02;
+	
+	LibraryAssociate LA = new LibraryAssociate("Trish");
+	
+	
 
 	@Before
 	public void setUp() throws Exception {
+		LA.setHourlyRate(trishHourlyRate);
+		LA.setCurrentHours(trishHours);
+		LA.setCurrentSales(trishCurrentSales);
+		LA.setCommisionRate(trishCommisionRate);
+		
 	}
 
 	@After
@@ -18,7 +33,7 @@ public class LibraryAssociateTest {
 
 	@Test
 	public void testCalculatePay() {
-		fail("Not yet implemented");
+		assertEquals(trishPay, LA.calculatePay(), .0);
 	}
 
 	@Test
@@ -43,12 +58,12 @@ public class LibraryAssociateTest {
 
 	@Test
 	public void testGetName() {
-		fail("Not yet implemented");
+		assertEquals("Trish", LA.getName());
 	}
 
 	@Test
 	public void testGetCurrentHours() {
-		fail("Not yet implemented");
+		assertEquals(trishHours, LA.getCurrentHours(), .0);
 	}
 
 	@Test

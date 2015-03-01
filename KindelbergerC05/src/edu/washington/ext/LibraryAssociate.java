@@ -19,7 +19,6 @@ public class LibraryAssociate extends LibraryEmployee {
 	}
 
 	public double calculatePay() {
-		// TODO Auto-generated method stub
 		return super.calculatePay() + commisionRate * super.getCurrentSales();
 	}
 
