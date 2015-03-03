@@ -7,9 +7,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class LibrarianTest {
+	
+	double librarianBasePay = 4000.00;
+	double librarianCurrentSales = 10000.00;
+	double librarianBonusRate = .005;
+	double librarianPay = 4502.50;
+	
+	Librarian librarian = new Librarian("Beth");
+	
 
 	@Before
 	public void setUp() throws Exception {
+		Librarian.setBonusRate(librarianBonusRate);
+		librarian.setCurrentLibrarianTotals(librarianCurrentSales);
+		librarian.setBasePay(librarianBasePay);
 	}
 
 	@After

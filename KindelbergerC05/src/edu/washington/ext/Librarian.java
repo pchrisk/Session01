@@ -10,7 +10,16 @@ public class Librarian implements Employee {
 	
 	
 	public Librarian(String name) {
+		this.name = name;
 		
+	}
+
+	public double getBasePay() {
+		return basePay;
+	}
+
+	public void setBasePay(double basePay) {
+		this.basePay = basePay;
 	}
 
 	public static double getBonusRate() {
@@ -39,14 +48,13 @@ public class Librarian implements Employee {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.name;
 	}
 
 	@Override
 	public double calculatePay() {
 		// TODO Auto-generated method stub
-		return 0;
+		return basePay + getBonusRate()*getCurrentLibraryTotals();
 	}
 
 }
