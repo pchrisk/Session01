@@ -204,6 +204,7 @@ public class LibraryTest {
 	public void testSetLibrarian() {
 		library.setLibrarian(librarian);
 		assertEquals("Beth", librarian.getName());
+
 	}
 
 }

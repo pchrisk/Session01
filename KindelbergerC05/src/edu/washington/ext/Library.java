@@ -23,10 +23,10 @@ public class Library {
 	/**
 	 * Instantiates a new library.
 	 *
-	 * @param librarynumber the librarynumber
+	 * @param librarynumber the libraryNumber
 	 */
-	public Library(final int librarynumber) {
-		this.libraryNumber = librarynumber;
+	public Library(final int libraryNumber) {
+		this.libraryNumber = libraryNumber;
 		employeeList = new ArrayList<LibraryEmployee>();		
 		
 	}

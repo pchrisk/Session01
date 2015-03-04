@@ -9,4 +9,4 @@ Wrapper classes  have the purpose of simplifying and centralizing methods. IE, I
 
 
 How is Java's interface inheritance similar to and different from multiple class inheritance?
-
+interfaces give you some of the benefits of multiple class inheritance without some of the problems tha can arise later like the diamond problem.
