@@ -5,9 +5,8 @@ public class LibraryAssociate extends LibraryEmployee {
 	private double commisionRate = 0;
 	
 
-	public LibraryAssociate(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public LibraryAssociate(String name) {		
+		super(name);		
 	}
 	
 	public double getCommisionRate() {
@@ -15,7 +14,9 @@ public class LibraryAssociate extends LibraryEmployee {
 	}
 
 	public void setCommisionRate(double commisionRate) {
-		this.commisionRate = commisionRate;
+		if (commisionRate > 0) {
+			this.commisionRate = commisionRate;
+		}
 	}
 
 	public double calculatePay() {

@@ -1,10 +1,13 @@
 package edu.washington.ext;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Library {
 	
 	private int libraryNumber = 0;
+	
+
 	ArrayList<LibraryEmployee> employeeList;
 	Librarian librarian;
 	
@@ -15,34 +18,30 @@ public class Library {
 		
 	}
 	
-	public void processPayroll() {
-		//List<PayrollRecord>
-//		for each employee in employeelist and Librarian, add the name and pay (which will need to be calculated)
-//		to PayrollRecord
-		
+	public int getLibraryNumber() {
+		return libraryNumber;
+	}
+	
+	public List<PayrollRecord> processPayroll() {
+				
 		LibraryEmployee employee = null;
 		
 		ArrayList<PayrollRecord> payRollRecord = new ArrayList<PayrollRecord>();
 		for (int i=0; i < employeeList.size(); i++) {
 			employee = employeeList.get(i);
-			System.out.println(employee.getName() + "\t" + employee.calculatePay());			
-			payRollRecord.add(new PayrollRecord(employee.getName(), employee.calculatePay()));
-			
-			
+			payRollRecord.add(new PayrollRecord(employee.getName(), employee.calculatePay()));			
 			
 		}
 		
 		payRollRecord.add(new PayrollRecord(librarian.getName(), librarian.calculatePay()));
-		System.out.println(getCurrentUsedBookSales());
-		librarian.setCurrentLibraryTotals(getCurrentUsedBookSales());
-		System.out.println(librarian.calculatePay());
-		
-		
-		
+				
+		return payRollRecord;		
 	}
 	
 	public void addEmployee(Object LibraryEmployee) {
-		employeeList.add((LibraryEmployee) LibraryEmployee);
+		if (LibraryEmployee instanceof LibraryEmployee) {
+			employeeList.add((LibraryEmployee) LibraryEmployee);
+		}
 	}
 	
 	public double getCurrentUsedBookSales() {
@@ -59,7 +58,9 @@ public class Library {
 	}
 	
 	public void setLibrarian(Librarian librarian) {
-		this.librarian = librarian;
+		if (librarian instanceof Librarian) {
+			this.librarian = librarian;
+		}
 
 	}
 

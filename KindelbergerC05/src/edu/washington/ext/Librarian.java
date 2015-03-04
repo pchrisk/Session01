@@ -10,8 +10,11 @@ public class Librarian implements Employee {
 	
 	
 	public Librarian(String name) {
-		this.name = name;
-		
+		if (name != "") {
+			this.name = name;
+		} else {
+			System.exit(1);
+		}
 	}
 
 	public double getBasePay() {
@@ -19,7 +22,9 @@ public class Librarian implements Employee {
 	}
 
 	public void setBasePay(double basePay) {
-		this.basePay = basePay;
+		if (basePay > 0) {
+			this.basePay = basePay;
+		}		
 	}
 
 	public static double getBonusRate() {
@@ -27,7 +32,9 @@ public class Librarian implements Employee {
 	}
 
 	public static void setBonusRate(double bonusRate) {
-		Librarian.bonusRate = bonusRate;
+		if (bonusRate > 0) {
+			Librarian.bonusRate = bonusRate;
+		}		
 	}
 
 	public double getCurrentLibraryTotals() {
@@ -53,7 +60,6 @@ public class Librarian implements Employee {
 
 	@Override
 	public double calculatePay() {
-		// TODO Auto-generated method stub
 		return basePay + getBonusRate()*getCurrentLibraryTotals();
 	}
 

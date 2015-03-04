@@ -8,8 +8,11 @@ public class LibraryEmployee implements Employee {
 	private double currentSales = 0;
 	
 	public LibraryEmployee(String name){
-		this.name = name;
-		
+		if (name != "") {
+			this.name = name;
+		} else {
+			System.exit(1);
+		}
 		
 	}
 	
@@ -25,7 +28,9 @@ public class LibraryEmployee implements Employee {
 	}
 
 	public void setCurrentHours(double currentHours) {
-		this.currentHours = currentHours;
+		if (currentHours >= 0) {
+			this.currentHours = currentHours;
+		}
 	}
 
 	public double getHourlyRate() {
@@ -33,7 +38,10 @@ public class LibraryEmployee implements Employee {
 	}
 
 	public void setHourlyRate(double hourlyRate) {
-		this.hourlyRate = hourlyRate;
+		if (hourlyRate > 0) {
+			this.hourlyRate = hourlyRate;
+		}
+		
 	}
 
 	public double getCurrentSales() {
@@ -41,7 +49,9 @@ public class LibraryEmployee implements Employee {
 	}
 
 	public void setCurrentSales(double currentSales) {
-		this.currentSales = currentSales;
+		if (currentSales >= 0) {
+			this.currentSales = currentSales;
+		}
 	}
 
 	@Override

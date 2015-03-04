@@ -2,6 +2,9 @@ package edu.washington.ext;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,6 +39,8 @@ public class LibraryTest {
 	double librarianCurrentSales = 10000.00;
 	double librarianBonusRate = .005;
 	double librarianPay = 4502.50;
+	
+	double currentLibraryUsedBookSales = 100500;
 	
 	Librarian librarian = new Librarian("Beth");
 	
@@ -84,14 +89,20 @@ public class LibraryTest {
 
 	@Test
 	public void testLibrary() {
-		fail("Not yet implemented");
+		
+		Library library = new Library(2);
+		assertEquals(2, library.getLibraryNumber(), 0);
 	}
 
 	@Test
 	public void testProcessPayroll() {
+		List<PayrollRecord> payrollList = new ArrayList<PayrollRecord>();
+		
 		testAddEmployee();
 		testSetLibrarian();
-		library.processPayroll();
+		payrollList = library.processPayroll();
+		assertEquals(5, payrollList.size());
+		
 	}
 
 	@Test
@@ -107,12 +118,13 @@ public class LibraryTest {
 	public void testGetCurrentUsedBookSales() {
 		testAddEmployee();
 		testSetLibrarian();
-		assertEquals(100500, library.getCurrentUsedBookSales(), .0);
+		assertEquals(currentLibraryUsedBookSales, library.getCurrentUsedBookSales(), .0);
 	}
 
 	@Test
 	public void testSetLibrarian() {
 		library.setLibrarian(librarian);
+		assertEquals("Beth", librarian.getName());
 	}
 
 }

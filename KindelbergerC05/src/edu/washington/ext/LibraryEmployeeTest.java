@@ -30,7 +30,7 @@ public class LibraryEmployeeTest {
 
 	@Test
 	public void testLibraryEmployee() {
-		fail("Not yet implemented");
+		assertEquals("class edu.washington.ext.LibraryEmployee", LE.getClass().toString());
 	}
 
 	@Test
@@ -45,7 +45,13 @@ public class LibraryEmployeeTest {
 
 	@Test
 	public void testSetCurrentHours() {
-		fail("Not yet implemented");
+		assertEquals(bobHours, LE.getCurrentHours(), .0);
+		LE.setCurrentHours(40);
+		assertEquals(40, LE.getCurrentHours(), .0);
+		LE.setCurrentHours(-1);
+		assertEquals(40, LE.getCurrentHours(), .0);
+		LE.setCurrentHours(0);
+		assertEquals(0, LE.getCurrentHours(), .0);
 	}
 
 	@Test
@@ -55,26 +61,33 @@ public class LibraryEmployeeTest {
 
 	@Test
 	public void testSetHourlyRate() {
-		fail("Not yet implemented");
+		assertEquals(bobHourlyRate, LE.getHourlyRate(), .0);
+		LE.setHourlyRate(20.75);
+		assertEquals(20.75, LE.getHourlyRate(), .0);
+		LE.setHourlyRate(-1);
+		assertEquals(20.75, LE.getHourlyRate(), .0);
+		LE.setHourlyRate(0);
+		assertEquals(20.75, LE.getHourlyRate(), .0);
 	}
 
 	@Test
 	public void testGetCurrentSales() {
-		assertEquals(bobCurrentSales, LE.getCurrentSales(), .0);;
+		assertEquals(bobCurrentSales, LE.getCurrentSales(), .0);
 	}
 
 	@Test
 	public void testSetCurrentSales() {
-		fail("Not yet implemented");
+		assertEquals(bobCurrentSales, LE.getCurrentSales(), .0);
+		LE.setCurrentSales(7500);
+		assertEquals(7500, LE.getCurrentSales(), .0);
+		LE.setCurrentSales(-1);
+		assertEquals(7500, LE.getCurrentSales(), .0);
+		LE.setCurrentSales(0);
+		assertEquals(0, LE.getCurrentSales(), .0);
 	}
 
 	@Test
 	public void testCalculatePay() {
-		System.out.println(LE.getName());
-		System.out.println(LE.getHourlyRate());
-		System.out.println(LE.getCurrentHours());
-		System.out.println(LE.calculatePay());
-
 		assertEquals(bobPay, LE.calculatePay(), .0);
 	}
 

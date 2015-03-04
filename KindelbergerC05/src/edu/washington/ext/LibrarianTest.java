@@ -12,6 +12,7 @@ public class LibrarianTest {
 	double librarianCurrentSales = 10000.00;
 	double librarianBonusRate = .005;
 	double librarianPay = 4502.50;
+	double libraryCurrentSales = 100000;
 	
 	Librarian librarian = new Librarian("Beth");
 	
@@ -29,17 +30,24 @@ public class LibrarianTest {
 
 	@Test
 	public void testLibrarian() {
-		fail("Not yet implemented");
+		System.out.println(librarian.getClass());
+		assertEquals("class edu.washington.ext.Librarian", librarian.getClass().toString());
 	}
 
 	@Test
 	public void testGetBonusRate() {
-		fail("Not yet implemented");
+		assertEquals(librarianBonusRate, Librarian.getBonusRate(), 0);
 	}
 
 	@Test
 	public void testSetBonusRate() {
-		fail("Not yet implemented");
+		assertEquals(librarianBonusRate, Librarian.getBonusRate(), 0);
+		Librarian.setBonusRate(.004);
+		assertEquals(.004, Librarian.getBonusRate(), 0);
+		Librarian.setBonusRate(-.004);
+		assertEquals(.004, Librarian.getBonusRate(), 0);
+		Librarian.setBonusRate(0);
+		assertEquals(.004, Librarian.getBonusRate(), 0);
 	}
 
 	@Test

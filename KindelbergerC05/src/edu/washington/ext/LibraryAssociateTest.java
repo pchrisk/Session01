@@ -14,6 +14,7 @@ public class LibraryAssociateTest {
 	double trishCurrentSales = 15000.00;
 	double trishCommisionRate = .02;
 	
+	
 	LibraryAssociate LA = new LibraryAssociate("Trish");
 	
 	
@@ -38,24 +39,27 @@ public class LibraryAssociateTest {
 
 	@Test
 	public void testLibraryAssociate() {
-		fail("Not yet implemented");
+		assertEquals("class edu.washington.ext.LibraryAssociate", LA.getClass().toString());
 	}
 
 	@Test
 	public void testGetCommisionRate() {
-		fail("Not yet implemented");
+		assertEquals(trishCommisionRate, LA.getCommisionRate(), 0);
 	}
 
 	@Test
 	public void testSetCommisionRate() {
-		fail("Not yet implemented");
+		assertEquals(trishCommisionRate, LA.getCommisionRate(), 0);
+		LA.setCommisionRate(.03);
+		assertEquals(.03, LA.getCommisionRate(), 0);
+		LA.setCommisionRate(-.01);
+		assertEquals(.03, LA.getCommisionRate(), 0);
+		LA.setCommisionRate(0);
+		assertEquals(.03, LA.getCommisionRate(), 0);
+		
 	}
 
-	@Test
-	public void testLibraryEmployee() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testGetName() {
 		assertEquals("Trish", LA.getName());
@@ -68,27 +72,45 @@ public class LibraryAssociateTest {
 
 	@Test
 	public void testSetCurrentHours() {
-		fail("Not yet implemented");
+		assertEquals(trishHours, LA.getCurrentHours(), .0);
+		LA.setCurrentHours(50);
+		assertEquals(50, LA.getCurrentHours(), .0);
+		LA.setCurrentHours(-50);
+		assertEquals(50, LA.getCurrentHours(), .0);
+		LA.setCurrentHours(0);
+		assertEquals(0, LA.getCurrentHours(), .0);
 	}
 
 	@Test
 	public void testGetHourlyRate() {
-		fail("Not yet implemented");
+		assertEquals(trishHourlyRate, LA.getHourlyRate(), .0);
 	}
 
 	@Test
 	public void testSetHourlyRate() {
-		fail("Not yet implemented");
+		assertEquals(trishHourlyRate, LA.getHourlyRate(), .0);
+		LA.setHourlyRate(15.00);
+		assertEquals(15.00, LA.getHourlyRate(), 0);
+		LA.setHourlyRate(-.01);
+		assertEquals(15.00, LA.getHourlyRate(), 0);
+		LA.setHourlyRate(0);
+		assertEquals(15.00, LA.getHourlyRate(), 0);
 	}
 
 	@Test
 	public void testGetCurrentSales() {
-		fail("Not yet implemented");
+		assertEquals(trishCurrentSales, LA.getCurrentSales(), .0);
 	}
 
 	@Test
 	public void testSetCurrentSales() {
-		fail("Not yet implemented");
+		assertEquals(trishCurrentSales, LA.getCurrentSales(), .0);
+		LA.setCurrentSales(50000);
+		assertEquals(50000, LA.getCurrentSales(), .0);
+		LA.setCurrentSales(-1);
+		assertEquals(50000, LA.getCurrentSales(), .0);
+		LA.setCurrentSales(0);
+		assertEquals(0, LA.getCurrentSales(), .0);
 	}
 
 }
