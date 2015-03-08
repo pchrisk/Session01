@@ -2,7 +2,7 @@ package edu.washington.ext;
 
 public class LibraryAssociate extends LibraryEmployee {
 	
-	private double commisionRate;
+	private double commissionRate;
 
 	public LibraryAssociate(String name) {
 		super(name);
@@ -10,15 +10,15 @@ public class LibraryAssociate extends LibraryEmployee {
 
 	
 	/**
-	 * @param commisionRate the commisionRate to set
+	 * @param commissionRate the commisionRate to set
 	 */
-	public void setCommisionRate(double commisionRate) {
-		this.commisionRate = commisionRate;
+	public void setCommissionRate(double commissionRate) {
+		this.commissionRate = commissionRate;
 	}
 	
 	@Override
 	public double calculatePay() {
-		return super.calculatePay() + commisionRate * getCurrentSales();
+		return super.calculatePay() + commissionRate * getCurrentSales();
 	}
 	
 

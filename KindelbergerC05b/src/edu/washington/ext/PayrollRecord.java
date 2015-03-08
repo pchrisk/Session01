@@ -6,6 +6,8 @@ public class PayrollRecord {
 	private double currentPay;
 	
 	public PayrollRecord(String name, double currentPay) {
+		this.employeeName = name;
+		this.currentPay = currentPay;
 		
 	}
 
