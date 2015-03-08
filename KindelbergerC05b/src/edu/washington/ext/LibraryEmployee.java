@@ -36,8 +36,7 @@ public class LibraryEmployee implements Employee {
 
 	@Override
 	public double calculatePay() {
-		// TODO Auto-generated method stub
-		return 0;
+		return hourlyRate * currentHours;
 	}
 
 }
