@@ -1,5 +1,7 @@
 package edu.washington.ext;
 
+import edu.washington.ext.common.Employee;
+
 public class Librarian implements Employee {
 	
 	

@@ -1,4 +1,4 @@
-package edu.washington.ext;
+package edu.washington.ext.common;
 
 public interface Employee {
 	

@@ -1,6 +1,8 @@
 package edu.washington.ext;
 
-public class LibraryAssociate extends LibraryEmployee {
+import edu.washington.ext.common.*;
+
+public class LibraryAssociate extends AbstractEmployee implements CommissionedEmployee {
 	
 	private double commissionRate;
 
