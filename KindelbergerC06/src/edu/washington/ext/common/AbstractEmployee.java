@@ -11,7 +11,7 @@ public abstract class AbstractEmployee implements Employee{
 		this.name = name;
 	}
 	
-	protected void setCurrentSales(double currentSales) {
+	public void setCurrentSales(double currentSales) {
 		this.currentSales = currentSales;
 	}
 	

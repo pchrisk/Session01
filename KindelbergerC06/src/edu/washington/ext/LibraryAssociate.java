@@ -1,12 +1,14 @@
 package edu.washington.ext;
 
-import edu.washington.ext.common.*;
+import edu.washington.ext.common.AbstractEmployee;
+import edu.washington.ext.common.CommissionedEmployee;
+
 
 public class LibraryAssociate extends AbstractEmployee implements CommissionedEmployee {
 	
 	private double commissionRate;
 
-	public LibraryAssociate(String name) {
+	protected LibraryAssociate(String name) {
 		super(name);
 	}
 
@@ -14,7 +16,7 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	/**
 	 * @param commissionRate the commisionRate to set
 	 */
-	public void setCommissionRate(double commissionRate) {
+	protected void setCommissionRate(double commissionRate) {
 		this.commissionRate = commissionRate;
 	}
 	

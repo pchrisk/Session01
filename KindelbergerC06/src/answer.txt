@@ -1,0 +1,4 @@
+How does inheritance break encapsulation? 
+
+
+What are static and dynamic types and how are they different?

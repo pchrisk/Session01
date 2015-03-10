@@ -10,41 +10,22 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	private static double commissionRate;
 	private double basePay;
 	private double currentLibraryTotals;
-//	private double currentLibrarianTotals;
 	
-	public Librarian(String name) {
+	protected Librarian(String name) {
 		super(name);
 	}		
 
-//	public double getCurrentLibrarianTotals() {
-//		return currentLibrarianTotals;
-//	}
-//
-//
-//	public void setCurrentLibrarianTotals(double currentLibrarianTotals) {
-//		this.currentLibrarianTotals = currentLibrarianTotals;
-//	}
-
-
-	public static void setcommissionRate(double commissionRate) {
+	protected static void setcommissionRate(double commissionRate) {
 		Librarian.commissionRate = commissionRate;
 	}
 
-
-	public void setBasePay(double basePay) {
+	protected void setBasePay(double basePay) {
 		this.basePay = basePay;
 	}
 
-
-	public void setCurrentLibraryTotals(double currentLibraryTotals) {
+	protected void setCurrentLibraryTotals(double currentLibraryTotals) {
 		this.currentLibraryTotals = currentLibraryTotals;
 	}
-
-
-//	@Override
-//	public String getName() {
-//		return this.name;
-//	}
 
 	@Override
 	public double calculatePay() {
