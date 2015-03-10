@@ -1,34 +1,33 @@
 package edu.washington.ext;
 
-import edu.washington.ext.common.Employee;
+import edu.washington.ext.common.AbstractEmployee;
+import edu.washington.ext.common.CommissionedEmployee;
 
-public class Librarian implements Employee {
+public class Librarian extends AbstractEmployee implements CommissionedEmployee {
 	
 	
 
-	private static double bonusRate;
-	private String name;
+	private static double commissionRate;
 	private double basePay;
 	private double currentLibraryTotals;
-	private double currentLibrarianTotals;
+//	private double currentLibrarianTotals;
 	
 	public Librarian(String name) {
-		super();
-		this.name = name;
+		super(name);
 	}		
 
-	public double getCurrentLibrarianTotals() {
-		return currentLibrarianTotals;
-	}
+//	public double getCurrentLibrarianTotals() {
+//		return currentLibrarianTotals;
+//	}
+//
+//
+//	public void setCurrentLibrarianTotals(double currentLibrarianTotals) {
+//		this.currentLibrarianTotals = currentLibrarianTotals;
+//	}
 
 
-	public void setCurrentLibrarianTotals(double currentLibrarianTotals) {
-		this.currentLibrarianTotals = currentLibrarianTotals;
-	}
-
-
-	public static void setBonusRate(double bonusRate) {
-		Librarian.bonusRate = bonusRate;
+	public static void setBonusRate(double commissionRate) {
+		Librarian.commissionRate = commissionRate;
 	}
 
 
@@ -42,14 +41,19 @@ public class Librarian implements Employee {
 	}
 
 
-	@Override
-	public String getName() {
-		return this.name;
-	}
+//	@Override
+//	public String getName() {
+//		return this.name;
+//	}
 
 	@Override
 	public double calculatePay() {
-		return basePay + currentLibraryTotals * bonusRate;
+		return basePay + calculateCommission();
+	}
+
+	@Override
+	public double calculateCommission() {
+		return currentLibraryTotals * commissionRate;
 	}
 
 }

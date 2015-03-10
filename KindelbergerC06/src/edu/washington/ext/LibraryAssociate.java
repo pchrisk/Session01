@@ -20,7 +20,13 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	
 	@Override
 	public double calculatePay() {
-		return super.calculatePay() + commissionRate * getCurrentSales();
+		return super.calculatePay() + calculateCommission();
+	}
+
+
+	@Override
+	public double calculateCommission() {
+		return commissionRate * getCurrentSales();
 	}
 	
 
