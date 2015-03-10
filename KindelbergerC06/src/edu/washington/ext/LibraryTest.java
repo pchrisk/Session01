@@ -92,6 +92,8 @@ String la1Name = "Peter";
 	/** The current library used book sales. */
 	double currentLibraryUsedBookSales = 100500;
 	
+	double totalCommission = 2752.50;
+	
 	/** The librarian. */
 	Librarian librarian = new Librarian(librarianName);
 	
@@ -139,7 +141,7 @@ String la1Name = "Peter";
 		LE1.setCurrentHours(le1Hours);
 		LE1.setCurrentSales(le1CurrentSales);
 		
-		Librarian.setBonusRate(librarianBonusRate);
+		Librarian.setcommissionRate(librarianBonusRate);
 		librarian.setCurrentSales(librarianCurrentSales);
 		librarian.setBasePay(librarianBasePay);
 		
@@ -205,5 +207,11 @@ String la1Name = "Peter";
 	public void testGetCurrentUsedBookSales() {
 		assertEquals(currentLibraryUsedBookSales, library.getCurrentUsedBookSales(), .0);
 	}
+	
+	@Test
+	public void testGetTotalCommissions() {
+		assertEquals(totalCommission, library.getTotalCommissions(), .0);
+	}
+	
 
 }

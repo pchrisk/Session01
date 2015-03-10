@@ -26,7 +26,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 //	}
 
 
-	public static void setBonusRate(double commissionRate) {
+	public static void setcommissionRate(double commissionRate) {
 		Librarian.commissionRate = commissionRate;
 	}
 
@@ -53,7 +53,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 
 	@Override
 	public double calculateCommission() {
-		return currentLibraryTotals * commissionRate;
+		return currentLibraryTotals * Librarian.commissionRate;
 	}
 
 }

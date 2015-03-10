@@ -48,6 +48,23 @@ public class Library {
 	        return storeSales;
 	}
 	
+	public double getTotalCommissions() {
+		double totalCommission = 0;
+		double storeSales = 0;
+        for (AbstractEmployee emp : staff) {
+        	if (emp instanceof LibraryAssociate) {
+        		storeSales += emp.getCurrentSales();
+        		totalCommission += ((LibraryAssociate) emp).calculateCommission();
+        	} else if (emp instanceof LibraryEmployee) {
+        		storeSales += emp.getCurrentSales();
+        	}        	
+        }
+        storeSales += librarian.getCurrentSales();
+        librarian.setCurrentLibraryTotals(storeSales);
+        totalCommission += librarian.calculateCommission();        
+        return totalCommission;
+	}
+	
 	public void addEmployee(AbstractEmployee employee) {
 		 staff.add(employee);
 	}
