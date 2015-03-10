@@ -8,8 +8,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LibraryTest.
+ */
 public class LibraryTest {
 
+/** The la1 name. */
 String la1Name = "Peter";
 	
 	/** The la1 pay. */
@@ -27,6 +32,7 @@ String la1Name = "Peter";
 	/** The la1 commission rate. */
 	double la1CommissionRate = .02;
 	
+	/** The la2 name. */
 	String la2Name = "Paul";
 	
 	/** The la2 pay. */
@@ -44,6 +50,7 @@ String la1Name = "Peter";
 	/** The la2 commission rate. */
 	double la2CommissionRate = .02;
 	
+	/** The la3 name. */
 	String la3Name = "Mary";
 	
 	/** The la3 pay. */
@@ -61,6 +68,7 @@ String la1Name = "Peter";
 	/** The la3 commission rate. */
 	double la3CommissionRate = .03;
 	
+	/** The le1 name. */
 	String le1Name = "Joan";
 	
 	/** The le1 pay. */
@@ -75,6 +83,7 @@ String la1Name = "Peter";
 	/** The le1 current sales. */
 	double le1CurrentSales = 500.00;
 	
+	/** The librarian name. */
 	String librarianName = "Beth";
 	
 	/** The librarian base pay. */
@@ -92,6 +101,7 @@ String la1Name = "Peter";
 	/** The current library used book sales. */
 	double currentLibraryUsedBookSales = 100500;
 	
+	/** The total commission. */
 	double totalCommission = 2752.50;
 	
 	/** The librarian. */
@@ -208,6 +218,9 @@ String la1Name = "Peter";
 		assertEquals(currentLibraryUsedBookSales, library.getCurrentUsedBookSales(), .0);
 	}
 	
+	/**
+	 * Test get total commissions.
+	 */
 	@Test
 	public void testGetTotalCommissions() {
 		assertEquals(totalCommission, library.getTotalCommissions(), .0);
