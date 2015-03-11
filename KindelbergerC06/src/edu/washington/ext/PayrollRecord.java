@@ -1,6 +1,5 @@
 package edu.washington.ext;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class PayrollRecord.
  */
@@ -18,7 +17,7 @@ public class PayrollRecord {
 	 * @param name the name
 	 * @param currentPay the current pay
 	 */
-	public PayrollRecord(String name, double currentPay) {
+	public PayrollRecord(final String name, final double currentPay) {
 		this.employeeName = name;
 		this.currentPay = currentPay;
 		
@@ -29,7 +28,7 @@ public class PayrollRecord {
 	 *
 	 * @return the employee name
 	 */
-	public String getEmployeeName() {
+	public final String getEmployeeName() {
 		return employeeName;
 	}
 
@@ -38,7 +37,7 @@ public class PayrollRecord {
 	 *
 	 * @return the current pay
 	 */
-	public double getCurrentPay() {
+	public final double getCurrentPay() {
 		return currentPay;
 	}
 	

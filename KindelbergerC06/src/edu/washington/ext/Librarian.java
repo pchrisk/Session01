@@ -3,7 +3,6 @@ package edu.washington.ext;
 import edu.washington.ext.common.AbstractEmployee;
 import edu.washington.ext.common.CommissionedEmployee;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Librarian.
  */
@@ -25,7 +24,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 *
 	 * @param name the name
 	 */
-	protected Librarian(String name) {
+	protected Librarian(final String name) {
 		super(name);
 	}		
 
@@ -34,7 +33,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 *
 	 * @param commissionRate the new commission rate
 	 */
-	protected static void setcommissionRate(double commissionRate) {
+	protected static void setcommissionRate(final double commissionRate) {
 		Librarian.commissionRate = commissionRate;
 	}
 
@@ -43,7 +42,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 *
 	 * @param basePay the new base pay
 	 */
-	protected void setBasePay(double basePay) {
+	protected final void setBasePay(final double basePay) {
 		this.basePay = basePay;
 	}
 
@@ -52,7 +51,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 *
 	 * @param currentLibraryTotals the new current library totals
 	 */
-	protected void setCurrentLibraryTotals(double currentLibraryTotals) {
+	protected final void setCurrentLibraryTotals(final double currentLibraryTotals) {
 		this.currentLibraryTotals = currentLibraryTotals;
 	}
 
@@ -60,7 +59,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 * @see edu.washington.ext.common.AbstractEmployee#calculatePay()
 	 */
 	@Override
-	public double calculatePay() {
+	public final double calculatePay() {
 		return basePay + calculateCommission();
 	}
 
@@ -68,7 +67,7 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 * @see edu.washington.ext.common.CommissionedEmployee#calculateCommission()
 	 */
 	@Override
-	public double calculateCommission() {
+	public final double calculateCommission() {
 		return currentLibraryTotals * Librarian.commissionRate;
 	}
 

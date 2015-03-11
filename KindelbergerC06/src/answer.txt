@@ -1,4 +1,9 @@
 How does inheritance break encapsulation? 
+Potentially the inheritance could open up or allow access to something that was not intended to be accessed. So it is important
+the privilege of inheritance not be abused.
 
 
 What are static and dynamic types and how are they different?
+Static type is compile time and dynamic is run time. An object can be set as a type at compile time (static) but then can be 
+later modified while the program is running (dynamic). Class A if extended by Class B, then an object can be declared as an object
+of type A but then be replaces with an object of type B during run time.

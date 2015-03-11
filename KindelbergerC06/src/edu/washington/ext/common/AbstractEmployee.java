@@ -1,29 +1,28 @@
 package edu.washington.ext.common;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AbstractEmployee.
  */
-public abstract class AbstractEmployee implements Employee{
+public abstract class AbstractEmployee implements Employee {
 
 	/** The name. */
-	protected String name;
+	private String name;
 	
 	/** The current hours. */
-	protected double currentHours;
+	private double currentHours;
 	
 	/** The hourly rate. */
-	protected double hourlyRate;
+	private double hourlyRate;
 	
 	/** The current sales. */
-	protected double currentSales;
+	private double currentSales;
 	
 	/**
 	 * Instantiates a new abstract employee.
 	 *
 	 * @param name the name
 	 */
-	protected AbstractEmployee(String name) {
+	protected AbstractEmployee(final String name) {
 		this.name = name;
 	}
 	
@@ -32,7 +31,7 @@ public abstract class AbstractEmployee implements Employee{
 	 *
 	 * @param currentSales the new current sales
 	 */
-	public void setCurrentSales(double currentSales) {
+	public final void setCurrentSales(final double currentSales) {
 		this.currentSales = currentSales;
 	}
 	
@@ -41,7 +40,7 @@ public abstract class AbstractEmployee implements Employee{
 	 *
 	 * @return the current sales
 	 */
-	public double getCurrentSales() {
+	public final double getCurrentSales() {
 		return currentSales;
 	}	
 	
@@ -50,7 +49,7 @@ public abstract class AbstractEmployee implements Employee{
 	 *
 	 * @param currentHours the new current hours
 	 */
-	public void setCurrentHours(double currentHours) {
+	public final void setCurrentHours(final double currentHours) {
 		this.currentHours = currentHours;
 	}
 	
@@ -68,7 +67,7 @@ public abstract class AbstractEmployee implements Employee{
 	 *
 	 * @param hourlyRate the new hourly rate
 	 */
-	public void setHourlyRate(double hourlyRate) {
+	public final void setHourlyRate(final double hourlyRate) {
 		this.hourlyRate = hourlyRate;
 	}
 	
@@ -85,7 +84,7 @@ public abstract class AbstractEmployee implements Employee{
 	 * @see edu.washington.ext.common.Employee#getName()
 	 */
 	@Override
-	public String getName() {
+	public final String getName() {
 		return this.name;
 	}
 

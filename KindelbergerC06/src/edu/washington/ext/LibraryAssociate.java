@@ -4,7 +4,6 @@ import edu.washington.ext.common.AbstractEmployee;
 import edu.washington.ext.common.CommissionedEmployee;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class LibraryAssociate.
  */
@@ -18,7 +17,7 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	 *
 	 * @param name the name
 	 */
-	protected LibraryAssociate(String name) {
+	protected LibraryAssociate(final String name) {
 		super(name);
 	}
 
@@ -28,7 +27,7 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	 *
 	 * @param commissionRate the commisionRate to set
 	 */
-	protected void setCommissionRate(double commissionRate) {
+	protected final void setCommissionRate(final double commissionRate) {
 		this.commissionRate = commissionRate;
 	}
 	
@@ -36,7 +35,7 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	 * @see edu.washington.ext.common.AbstractEmployee#calculatePay()
 	 */
 	@Override
-	public double calculatePay() {
+	public final double calculatePay() {
 		return super.calculatePay() + calculateCommission();
 	}
 
@@ -45,7 +44,7 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	 * @see edu.washington.ext.common.CommissionedEmployee#calculateCommission()
 	 */
 	@Override
-	public double calculateCommission() {
+	public final double calculateCommission() {
 		return commissionRate * getCurrentSales();
 	}
 	

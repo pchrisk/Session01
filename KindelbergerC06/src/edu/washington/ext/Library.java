@@ -5,7 +5,6 @@ import java.util.List;
 
 import edu.washington.ext.common.AbstractEmployee;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Library.
  */
@@ -25,7 +24,7 @@ public class Library {
 	 *
 	 * @param libraryNumber the library number
 	 */
-	protected Library(int libraryNumber) {
+	protected Library(final int libraryNumber) {
 		this.libraryNumber = libraryNumber;
 		staff = new ArrayList<AbstractEmployee>();
 
@@ -36,7 +35,7 @@ public class Library {
 	 *
 	 * @return the library number
 	 */
-	protected int getLibraryNumber() {
+	protected final int getLibraryNumber() {
 		return libraryNumber;
 	}
 
@@ -45,7 +44,7 @@ public class Library {
 	 *
 	 * @return the list
 	 */
-	protected List<PayrollRecord> processPayroll() {
+	protected final List<PayrollRecord> processPayroll() {
 		List<PayrollRecord> payroll = new ArrayList<PayrollRecord>();
 		double storeSales = 0;
 		for (AbstractEmployee emp : staff) {
@@ -69,7 +68,7 @@ public class Library {
 	 *
 	 * @return the current used book sales
 	 */
-	protected double getCurrentUsedBookSales() {
+	protected final double getCurrentUsedBookSales() {
 		double storeSales = 0;
 		for (AbstractEmployee emp : staff) {
 			storeSales += emp.getCurrentSales();
@@ -83,7 +82,7 @@ public class Library {
 	 *
 	 * @return the total commissions
 	 */
-	protected double getTotalCommissions() {
+	protected final double getTotalCommissions() {
 		double totalCommission = 0;
 		double storeSales = 0;
 		for (AbstractEmployee emp : staff) {
@@ -106,7 +105,7 @@ public class Library {
 	 *
 	 * @param employee the employee
 	 */
-	protected void addEmployee(AbstractEmployee employee) {
+	protected final void addEmployee(final AbstractEmployee employee) {
 		staff.add(employee);
 	}
 
@@ -115,7 +114,7 @@ public class Library {
 	 *
 	 * @param librarian the new librarian
 	 */
-	protected void setLibrarian(Librarian librarian) {
+	protected final void setLibrarian(final Librarian librarian) {
 		this.librarian = librarian;
 	}
 
