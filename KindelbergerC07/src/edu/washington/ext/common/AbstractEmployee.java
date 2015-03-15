@@ -1,7 +1,5 @@
 package edu.washington.ext.common;
 
-import org.hamcrest.core.IsNull;
-
 /**
  * The Class AbstractEmployee.
  */
@@ -99,16 +97,20 @@ public abstract class AbstractEmployee implements Employee {
 		return hourlyRate;
 	}
 	
-	/* (non-Javadoc)
-	 * @see edu.washington.ext.common.Employee#getName()
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
 	 */
 	@Override
 	public final String getName() {
 		return this.name;
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.washington.ext.common.Employee#calculatePay()
+	/**
+	 * Calculate pay.
+	 *
+	 * @return the double
 	 */
 	@Override
 	public double calculatePay() {

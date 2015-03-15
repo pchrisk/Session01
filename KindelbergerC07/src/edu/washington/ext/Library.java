@@ -25,8 +25,12 @@ public class Library {
 	 * @param libraryNumber the library number
 	 */
 	protected Library(final int libraryNumber) {
-		this.libraryNumber = libraryNumber;
-		staff = new ArrayList<AbstractEmployee>();
+		if (libraryNumber >= 0) {
+			this.libraryNumber = libraryNumber;
+			staff = new ArrayList<AbstractEmployee>();
+		} else {
+			throw new IllegalArgumentException("Library number must be 0 or greater.");
+		}
 
 	}
 

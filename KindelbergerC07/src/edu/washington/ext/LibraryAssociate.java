@@ -28,11 +28,18 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	 * @param commissionRate the commisionRate to set
 	 */
 	protected final void setCommissionRate(final double commissionRate) {
-		this.commissionRate = commissionRate;
+		if (commissionRate > 0) {
+			this.commissionRate = commissionRate;
+		} else {
+			throw new IllegalArgumentException("Commission rate must be greater than 0.");
+		}
+		
 	}
 	
-	/* (non-Javadoc)
-	 * @see edu.washington.ext.common.AbstractEmployee#calculatePay()
+	/** 
+	 * Calculate Pay of based off of hourly pay and commission rate
+	 * 
+	 * @return the double
 	 */
 	@Override
 	public final double calculatePay() {
@@ -40,12 +47,20 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	}
 
 
-	/* (non-Javadoc)
-	 * @see edu.washington.ext.common.CommissionedEmployee#calculateCommission()
+	/**
+	 * Calculates Commission
+	 * 
+	 * @return the double
 	 */
 	@Override
 	public final double calculateCommission() {
 		return commissionRate * getCurrentSales();
+	}
+
+
+	@Override
+	public double getCommissionRate() {
+		return this.commissionRate;
 	}
 	
 

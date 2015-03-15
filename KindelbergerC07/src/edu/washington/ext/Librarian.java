@@ -34,7 +34,11 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 * @param commissionRate the new commission rate
 	 */
 	protected static void setcommissionRate(final double commissionRate) {
-		Librarian.commissionRate = commissionRate;
+		if (commissionRate > 0) {
+			Librarian.commissionRate = commissionRate;
+		} else {
+			throw new IllegalArgumentException("Commission rate must be greater than 0.");
+		}
 	}
 
 	/**
@@ -43,7 +47,11 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 * @param basePay the new base pay
 	 */
 	protected final void setBasePay(final double basePay) {
-		this.basePay = basePay;
+		if (basePay > 0) {
+			this.basePay = basePay;
+		} else {
+			throw new IllegalArgumentException("Base pay must be greater than 0.");
+		}
 	}
 
 	/**
@@ -52,23 +60,37 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	 * @param currentLibraryTotals the new current library totals
 	 */
 	protected final void setCurrentLibraryTotals(final double currentLibraryTotals) {
-		this.currentLibraryTotals = currentLibraryTotals;
+		if (currentLibraryTotals > 0) {
+			this.currentLibraryTotals = currentLibraryTotals;
+		} else {
+			throw new IllegalArgumentException("Library totals must be greater than 0.");
+		}
+		
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.washington.ext.common.AbstractEmployee#calculatePay()
+	/** 
+	 * Calculate Pay of Librarian based off of base pay and commission rate
+	 * 
+	 * @return the double
 	 */
 	@Override
 	public final double calculatePay() {
 		return basePay + calculateCommission();
 	}
 
-	/* (non-Javadoc)
-	 * @see edu.washington.ext.common.CommissionedEmployee#calculateCommission()
+	/**
+	 * Calculates Commission
+	 * 
+	 * @return the double
 	 */
 	@Override
 	public final double calculateCommission() {
 		return currentLibraryTotals * Librarian.commissionRate;
+	}
+
+	@Override
+	public double getCommissionRate() {
+		return Librarian.commissionRate;
 	}
 
 }
