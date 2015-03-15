@@ -14,7 +14,7 @@ import org.junit.Test;
 public class LibraryTest {
 
 	/** The la1 name. */
-	String la1Name = "Peter";
+	String la1Name = "";
 
 	/** The la1 pay. */
 	double la1Pay = 2025.00;

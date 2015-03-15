@@ -1,5 +1,7 @@
 package edu.washington.ext.common;
 
+import org.hamcrest.core.IsNull;
+
 /**
  * The Class AbstractEmployee.
  */
@@ -23,7 +25,12 @@ public abstract class AbstractEmployee implements Employee {
 	 * @param name the name
 	 */
 	protected AbstractEmployee(final String name) {
-		this.name = name;
+		if ((name != "") || (name != null)) {
+			this.name = name;
+		} else {
+			throw new IllegalArgumentException("Please pass a name!");
+		}
+		
 	}
 	
 	/**
@@ -32,7 +39,11 @@ public abstract class AbstractEmployee implements Employee {
 	 * @param currentSales the new current sales
 	 */
 	public final void setCurrentSales(final double currentSales) {
-		this.currentSales = currentSales;
+		if (currentSales > 0) {
+			this.currentSales = currentSales;
+		} else {
+			throw new IllegalArgumentException("Current Sales must be more than 0.");
+		}
 	}
 	
 	/**
@@ -50,7 +61,11 @@ public abstract class AbstractEmployee implements Employee {
 	 * @param currentHours the new current hours
 	 */
 	public final void setCurrentHours(final double currentHours) {
-		this.currentHours = currentHours;
+		if (currentHours > 0) {
+			this.currentHours = currentHours;
+		} else {
+			throw new IllegalArgumentException("Current hours must be greater than 0.");
+		}
 	}
 	
 	/**
@@ -68,7 +83,11 @@ public abstract class AbstractEmployee implements Employee {
 	 * @param hourlyRate the new hourly rate
 	 */
 	public final void setHourlyRate(final double hourlyRate) {
-		this.hourlyRate = hourlyRate;
+		if (hourlyRate > 0) {
+			this.hourlyRate = hourlyRate;
+		} else {
+			throw new IllegalArgumentException("Hourly rate must be greater than 0.");
+		}
 	}
 	
 	/**
