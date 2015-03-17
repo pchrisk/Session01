@@ -288,6 +288,20 @@ public class LibraryTest {
 		assertEquals(currentLibraryUsedBookSales,
 				library.getCurrentUsedBookSales(), .0);
 	}
+	
+	/**
+	 * Test get current used book sales.
+	 * @throws LibraryException 
+	 */
+	@Test
+	public void testGetCurrentUsedBookSales2() throws LibraryException {
+		
+		exception.expect(LibraryException.class);
+		libraryNoEmployees.getCurrentUsedBookSales();
+		
+//		assertEquals(currentLibraryUsedBookSales,
+//				libraryNoEmployees.getCurrentUsedBookSales(), .0);
+	}
 
 	/**
 	 * Test get total commissions.
@@ -295,6 +309,17 @@ public class LibraryTest {
 	@Test
 	public void testGetTotalCommissions() {
 		assertEquals(totalCommission, library.getTotalCommissions(), .0);
+	}
+	
+	@Test
+	public void testLibrary() {
+		
+		exception.expect(IllegalArgumentException.class);
+		
+		Library libraryNegNumber = new Library(0);
+		
+		
+		
 	}
 
 }
