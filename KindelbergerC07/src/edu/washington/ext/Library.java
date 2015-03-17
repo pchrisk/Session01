@@ -55,16 +55,22 @@ public class Library {
 		List<PayrollRecord> payroll = new ArrayList<PayrollRecord>();
 		double storeSales = 0;
 		try {
-		for (AbstractEmployee emp : staff) {
-			PayrollRecord payRec;
-			if ((emp instanceof LibraryAssociate) && ((LibraryAssociate)emp).getCommissionRate() > 1) {
-				throw new LibraryException((CommissionedEmployee)emp);
+			if (staff.size() == 0) {
+				throw new LibraryException();
 			} else {
-				payRec = new PayrollRecord(emp.getName(), emp.calculatePay());
-				payroll.add(payRec);
-				storeSales += emp.getCurrentSales();
+				for (AbstractEmployee emp : staff) {
+					PayrollRecord payRec;
+					if ((emp instanceof LibraryAssociate)
+							&& ((LibraryAssociate) emp).getCommissionRate() > 1) {
+						throw new LibraryException((CommissionedEmployee) emp);
+					} else {
+						payRec = new PayrollRecord(emp.getName(),
+								emp.calculatePay());
+						payroll.add(payRec);
+						storeSales += emp.getCurrentSales();
+					}
+				}
 			}
-		}
 		storeSales += librarian.getCurrentSales();
 		librarian.setCurrentLibraryTotals(storeSales);
 		PayrollRecord mgrPayRec;
@@ -75,7 +81,8 @@ public class Library {
 		return payroll;
 		}
 		catch(LibraryException e){
-			throw new LibraryException(((AbstractEmployee)e.getEmployee()).getName() + " commission rate is greater than 100%");
+			throw e;
+//			new LibraryException(((AbstractEmployee)e.getEmployee()).getName() + " commission rate is greater than 100%");
 		}
 		catch(Exception e) {
 			throw e;

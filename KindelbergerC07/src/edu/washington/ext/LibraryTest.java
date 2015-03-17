@@ -122,6 +122,9 @@ public class LibraryTest {
 
 	/** The library. */
 	Library library = new Library(1);
+	
+	/** The library. */
+	Library libraryNoEmployees = new Library(2);
 
 	/**
 	 * Sets the up.
@@ -154,6 +157,7 @@ public class LibraryTest {
 		Librarian.setcommissionRate(librarianBonusRate);
 		librarian.setCurrentSales(librarianCurrentSales);
 		librarian.setBasePay(librarianBasePay);
+		
 
 		library.addEmployee(LA1);
 		library.addEmployee(LA2);
@@ -161,6 +165,8 @@ public class LibraryTest {
 		library.addEmployee(LE1);
 
 		library.setLibrarian(librarian);
+		libraryNoEmployees.setLibrarian(librarian);
+		
 
 	}
 
@@ -248,11 +254,11 @@ public class LibraryTest {
 	@Test
 	public void testProcessPayrollWithException2() throws LibraryException {
 		
-		LA1.setCommissionRate(2);
+		
 		exception.expect(LibraryException.class);
 
 		 
-		List<PayrollRecord> payroll = library.processPayroll();
+		List<PayrollRecord> payroll = libraryNoEmployees.processPayroll();
 		 assertEquals(5, payroll.size());
 		for (PayrollRecord payRec : payroll) {
 			if (librarianName.equals(payRec.getEmployeeName())) {
