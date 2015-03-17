@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.washington.ext.common.AbstractEmployee;
+import edu.washington.ext.common.CommissionedEmployee;
+
 
 /**
  * The Class Library.
@@ -47,15 +49,21 @@ public class Library {
 	 * Process payroll.
 	 *
 	 * @return the list
+	 * @throws LibraryException 
 	 */
-	protected final List<PayrollRecord> processPayroll() {
+	protected final List<PayrollRecord> processPayroll() throws LibraryException {
 		List<PayrollRecord> payroll = new ArrayList<PayrollRecord>();
 		double storeSales = 0;
+		try {
 		for (AbstractEmployee emp : staff) {
 			PayrollRecord payRec;
-			payRec = new PayrollRecord(emp.getName(), emp.calculatePay());
-			payroll.add(payRec);
-			storeSales += emp.getCurrentSales();
+			if ((emp instanceof LibraryAssociate) && ((LibraryAssociate)emp).getCommissionRate() > 1) {
+				throw new LibraryException((CommissionedEmployee)emp);
+			} else {
+				payRec = new PayrollRecord(emp.getName(), emp.calculatePay());
+				payroll.add(payRec);
+				storeSales += emp.getCurrentSales();
+			}
 		}
 		storeSales += librarian.getCurrentSales();
 		librarian.setCurrentLibraryTotals(storeSales);
@@ -63,19 +71,33 @@ public class Library {
 		mgrPayRec = new PayrollRecord(librarian.getName(),
 				librarian.calculatePay());
 		payroll.add(mgrPayRec);
-
+		
 		return payroll;
+		}
+		catch(LibraryException e){
+			throw new LibraryException(((AbstractEmployee)e.getEmployee()).getName() + " commission rate is greater than 100%");
+		}
+		catch(Exception e) {
+			throw e;
+		}
+
+		
 	}
 
 	/**
 	 * Gets the current used book sales.
 	 *
 	 * @return the current used book sales
+	 * @throws LibraryException 
 	 */
-	protected final double getCurrentUsedBookSales() {
+	protected final double getCurrentUsedBookSales() throws LibraryException {
 		double storeSales = 0;
-		for (AbstractEmployee emp : staff) {
-			storeSales += emp.getCurrentSales();
+		if (!staff.isEmpty()) {
+			for (AbstractEmployee emp : staff) {
+				storeSales += emp.getCurrentSales();
+			}
+		} else {
+			throw new LibraryException();
 		}
 		storeSales += librarian.getCurrentSales();
 		return storeSales;

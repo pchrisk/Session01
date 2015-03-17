@@ -1,30 +1,36 @@
 package edu.washington.ext;
 
+import edu.washington.ext.common.CommissionedEmployee;
+
 public class LibraryException extends Exception {
+	
+	private CommissionedEmployee employee;
 
 	public LibraryException() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public LibraryException(CommissionedEmployee emp) {
+		this.setEmployee(emp);
+	}
+	
+		
 	public LibraryException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
-	public LibraryException(Throwable cause) {
-		super(cause);
-		// TODO Auto-generated constructor stub
+	/**
+	 * @return the employee
+	 */
+	public CommissionedEmployee getEmployee() {
+		return employee;
 	}
 
-	public LibraryException(String message, Throwable cause) {
-		super(message, cause);
-		// TODO Auto-generated constructor stub
-	}
-
-	public LibraryException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-		// TODO Auto-generated constructor stub
+	/**
+	 * @param employee the employee to set
+	 */
+	public void setEmployee(CommissionedEmployee employee) {
+		this.employee = employee;
 	}
 
 }

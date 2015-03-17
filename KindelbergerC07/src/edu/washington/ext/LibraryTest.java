@@ -6,7 +6,9 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 /**
  * The Class LibraryTest.
@@ -171,13 +173,85 @@ public class LibraryTest {
 	@After
 	public void tearDown() throws Exception {
 	}
+	
+//	@Rule
+//	public ExpectedException exception = ExpectedException.none();
+//	
+//	exception.expect(LibraryException.class);
 
 	/**
 	 * Test process payroll.
+	 * @throws LibraryException 
 	 */
 	@Test
-	public void testProcessPayroll() {	
+	public void testProcessPayroll() throws LibraryException {
+		 
+		List<PayrollRecord> payroll = library.processPayroll();
+		 assertEquals(5, payroll.size());
+		for (PayrollRecord payRec : payroll) {
+			if (librarianName.equals(payRec.getEmployeeName())) {
+				assertEquals(librarianPay, payRec.getCurrentPay(), 0);
+			} else if (le1Name.equals(payRec.getEmployeeName())) {
+				assertEquals(le1Pay, payRec.getCurrentPay(), 0);
+			} else if (la1Name.equals(payRec.getEmployeeName())) {
+				assertEquals(la1Pay, payRec.getCurrentPay(), 0);
+			} else if (la2Name.equals(payRec.getEmployeeName())) {
+				assertEquals(la2Pay, payRec.getCurrentPay(), 0);
+			} else if (la3Name.equals(payRec.getEmployeeName())) {
+				assertEquals(la3Pay, payRec.getCurrentPay(), 0);
+			} else {
+				fail("Unknown employee!");
+			}
+		}
+
+	}
+	
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
+	
+	
+	/**
+	 * Test process payroll.
+	 * @throws LibraryException 
+	 */
+	@Test
+	public void testProcessPayrollWithException() throws LibraryException {
 		
+		LA1.setCommissionRate(2);
+		exception.expect(LibraryException.class);
+
+		 
+		List<PayrollRecord> payroll = library.processPayroll();
+		 assertEquals(5, payroll.size());
+		for (PayrollRecord payRec : payroll) {
+			if (librarianName.equals(payRec.getEmployeeName())) {
+				assertEquals(librarianPay, payRec.getCurrentPay(), 0);
+			} else if (le1Name.equals(payRec.getEmployeeName())) {
+				assertEquals(le1Pay, payRec.getCurrentPay(), 0);
+			} else if (la1Name.equals(payRec.getEmployeeName())) {
+				assertEquals(la1Pay, payRec.getCurrentPay(), 0);
+			} else if (la2Name.equals(payRec.getEmployeeName())) {
+				assertEquals(la2Pay, payRec.getCurrentPay(), 0);
+			} else if (la3Name.equals(payRec.getEmployeeName())) {
+				assertEquals(la3Pay, payRec.getCurrentPay(), 0);
+			} else {
+				fail("Unknown employee!");
+			}
+		}
+
+	}
+	
+	/**
+	 * Test process payroll.
+	 * @throws LibraryException 
+	 */
+	@Test
+	public void testProcessPayrollWithException2() throws LibraryException {
+		
+		LA1.setCommissionRate(2);
+		exception.expect(LibraryException.class);
+
+		 
 		List<PayrollRecord> payroll = library.processPayroll();
 		 assertEquals(5, payroll.size());
 		for (PayrollRecord payRec : payroll) {
@@ -198,11 +272,13 @@ public class LibraryTest {
 
 	}
 
+
 	/**
 	 * Test get current used book sales.
+	 * @throws LibraryException 
 	 */
 	@Test
-	public void testGetCurrentUsedBookSales() {
+	public void testGetCurrentUsedBookSales() throws LibraryException {
 		assertEquals(currentLibraryUsedBookSales,
 				library.getCurrentUsedBookSales(), .0);
 	}
