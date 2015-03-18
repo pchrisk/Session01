@@ -68,9 +68,10 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 		
 	}
 
-	/** 
-	 * Calculate Pay of Librarian based off of base pay and commission rate
-	 * 
+	/**
+	 *  
+	 * Calculate Pay of Librarian based off of base pay and commission rate.
+	 *
 	 * @return the double
 	 */
 	@Override
@@ -79,8 +80,8 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	}
 
 	/**
-	 * Calculates Commission
-	 * 
+	 * Calculates Commission.
+	 *
 	 * @return the double
 	 */
 	@Override
@@ -88,6 +89,11 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 		return currentLibraryTotals * Librarian.commissionRate;
 	}
 
+	/**
+	 * Gets the Commission Rate
+	 * 
+	 * @return the double
+	 */
 	@Override
 	public double getCommissionRate() {
 		return Librarian.commissionRate;

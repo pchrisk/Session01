@@ -49,7 +49,7 @@ public class Library {
 	 * Process payroll.
 	 *
 	 * @return the list
-	 * @throws LibraryException 
+	 * @throws LibraryException the library exception
 	 */
 	protected final List<PayrollRecord> processPayroll() throws LibraryException {
 		List<PayrollRecord> payroll = new ArrayList<PayrollRecord>();
@@ -95,7 +95,7 @@ public class Library {
 	 * Gets the current used book sales.
 	 *
 	 * @return the current used book sales
-	 * @throws LibraryException 
+	 * @throws LibraryException the library exception
 	 */
 	protected final double getCurrentUsedBookSales() throws LibraryException {
 		double storeSales = 0;
@@ -114,10 +114,12 @@ public class Library {
 	 * Gets the total commissions.
 	 *
 	 * @return the total commissions
+	 * @throws LibraryCommissionException the library commission exception
 	 */
-	protected final double getTotalCommissions() {
+	protected final double getTotalCommissions() throws LibraryCommissionException {
 		double totalCommission = 0;
 		double storeSales = 0;
+		try {
 		for (AbstractEmployee emp : staff) {
 			if (emp instanceof LibraryAssociate) {
 				storeSales += emp.getCurrentSales();
@@ -130,7 +132,15 @@ public class Library {
 		storeSales += librarian.getCurrentSales();
 		librarian.setCurrentLibraryTotals(storeSales);
 		totalCommission += librarian.calculateCommission();
-		return totalCommission;
+		if (totalCommission <= 0) {
+			throw new LibraryCommissionException(totalCommission);
+		} else {
+			return totalCommission;
+		}
+		}
+		catch (LibraryCommissionException e){
+			throw e;
+		}
 	}
 
 	/**

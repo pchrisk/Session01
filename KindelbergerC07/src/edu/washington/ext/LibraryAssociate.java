@@ -36,9 +36,10 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 		
 	}
 	
-	/** 
-	 * Calculate Pay of based off of hourly pay and commission rate
-	 * 
+	/**
+	 *  
+	 * Calculate Pay of based off of hourly pay and commission rate.
+	 *
 	 * @return the double
 	 */
 	@Override
@@ -48,8 +49,8 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 
 
 	/**
-	 * Calculates Commission
-	 * 
+	 * Calculates Commission.
+	 *
 	 * @return the double
 	 */
 	@Override
@@ -58,6 +59,11 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 	}
 
 
+	/**
+	 * Gets the Commission Rate
+	 * 
+	 * @return the double
+	 */
 	@Override
 	public double getCommissionRate() {
 		return this.commissionRate;

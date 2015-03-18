@@ -15,6 +15,12 @@ import org.junit.rules.ExpectedException;
  */
 public class LibraryTest {
 
+	/** The zero. */
+	double zero = 0;
+
+	/** The neg. */
+	double neg = -1;
+
 	/** The la1 name. */
 	String la1Name = "Peter";
 
@@ -122,7 +128,7 @@ public class LibraryTest {
 
 	/** The library. */
 	Library library = new Library(1);
-	
+
 	/** The library. */
 	Library libraryNoEmployees = new Library(2);
 
@@ -157,7 +163,6 @@ public class LibraryTest {
 		Librarian.setcommissionRate(librarianBonusRate);
 		librarian.setCurrentSales(librarianCurrentSales);
 		librarian.setBasePay(librarianBasePay);
-		
 
 		library.addEmployee(LA1);
 		library.addEmployee(LA2);
@@ -166,7 +171,6 @@ public class LibraryTest {
 
 		library.setLibrarian(librarian);
 		libraryNoEmployees.setLibrarian(librarian);
-		
 
 	}
 
@@ -179,21 +183,18 @@ public class LibraryTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
-//	@Rule
-//	public ExpectedException exception = ExpectedException.none();
-//	
-//	exception.expect(LibraryException.class);
 
 	/**
 	 * Test process payroll.
-	 * @throws LibraryException 
+	 *
+	 * @throws LibraryException
+	 *             the library exception
 	 */
 	@Test
 	public void testProcessPayroll() throws LibraryException {
-		 
+
 		List<PayrollRecord> payroll = library.processPayroll();
-		 assertEquals(5, payroll.size());
+		assertEquals(5, payroll.size());
 		for (PayrollRecord payRec : payroll) {
 			if (librarianName.equals(payRec.getEmployeeName())) {
 				assertEquals(librarianPay, payRec.getCurrentPay(), 0);
@@ -211,24 +212,25 @@ public class LibraryTest {
 		}
 
 	}
-	
+
+	/** The exception. */
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
-	
-	
+
 	/**
 	 * Test process payroll.
-	 * @throws LibraryException 
+	 *
+	 * @throws LibraryException
+	 *             the library exception
 	 */
 	@Test
 	public void testProcessPayrollWithException() throws LibraryException {
-		
+
 		LA1.setCommissionRate(2);
 		exception.expect(LibraryException.class);
 
-		 
 		List<PayrollRecord> payroll = library.processPayroll();
-		 assertEquals(5, payroll.size());
+		assertEquals(5, payroll.size());
 		for (PayrollRecord payRec : payroll) {
 			if (librarianName.equals(payRec.getEmployeeName())) {
 				assertEquals(librarianPay, payRec.getCurrentPay(), 0);
@@ -246,20 +248,20 @@ public class LibraryTest {
 		}
 
 	}
-	
+
 	/**
 	 * Test process payroll.
-	 * @throws LibraryException 
+	 *
+	 * @throws LibraryException
+	 *             the library exception
 	 */
 	@Test
 	public void testProcessPayrollWithException2() throws LibraryException {
-		
-		
+
 		exception.expect(LibraryException.class);
 
-		 
 		List<PayrollRecord> payroll = libraryNoEmployees.processPayroll();
-		 assertEquals(5, payroll.size());
+		assertEquals(5, payroll.size());
 		for (PayrollRecord payRec : payroll) {
 			if (librarianName.equals(payRec.getEmployeeName())) {
 				assertEquals(librarianPay, payRec.getCurrentPay(), 0);
@@ -278,48 +280,230 @@ public class LibraryTest {
 
 	}
 
-
 	/**
 	 * Test get current used book sales.
-	 * @throws LibraryException 
+	 *
+	 * @throws LibraryException
+	 *             the library exception
 	 */
 	@Test
 	public void testGetCurrentUsedBookSales() throws LibraryException {
 		assertEquals(currentLibraryUsedBookSales,
 				library.getCurrentUsedBookSales(), .0);
 	}
-	
+
 	/**
 	 * Test get current used book sales.
-	 * @throws LibraryException 
+	 *
+	 * @throws LibraryException
+	 *             the library exception
 	 */
 	@Test
 	public void testGetCurrentUsedBookSales2() throws LibraryException {
-		
+
 		exception.expect(LibraryException.class);
 		libraryNoEmployees.getCurrentUsedBookSales();
-		
-//		assertEquals(currentLibraryUsedBookSales,
-//				libraryNoEmployees.getCurrentUsedBookSales(), .0);
+
+		// assertEquals(currentLibraryUsedBookSales,
+		// libraryNoEmployees.getCurrentUsedBookSales(), .0);
 	}
 
 	/**
 	 * Test get total commissions.
+	 *
+	 * @throws LibraryCommissionException
+	 *             the library commission exception
 	 */
 	@Test
-	public void testGetTotalCommissions() {
+	public void testGetTotalCommissions() throws LibraryCommissionException {
 		assertEquals(totalCommission, library.getTotalCommissions(), .0);
 	}
-	
+
+	/**
+	 * Test get total commissions.
+	 *
+	 * @throws LibraryCommissionException
+	 *             the library commission exception
+	 */
 	@Test
-	public void testLibrary() {
-		
+	public void testGetTotalCommissionsException()
+			throws LibraryCommissionException {
+
+		exception.expect(LibraryCommissionException.class);
+
+		LA1.setCommissionRate(1);
+		LA2.setCurrentSales(1);
+		LA3.setCurrentSales(1);
+		Librarian.setcommissionRate(neg);
+
+		library.getTotalCommissions();
+	}
+
+	/**
+	 * Test set current sales neg.
+	 */
+	@Test
+	public void testSetCurrentSalesNeg() {
+
 		exception.expect(IllegalArgumentException.class);
-		
+
+		LA1.setCurrentSales(neg);
+	}
+
+	/**
+	 * Test set current sales zero.
+	 */
+	@Test
+	public void testSetCurrentSalesZero() {
+
+		exception.expect(IllegalArgumentException.class);
+
+		LA1.setCurrentSales(zero);
+	}
+
+	/**
+	 * Test set hourly rate neg.
+	 */
+	@Test
+	public void testSetHourlyRateNeg() {
+
+		exception.expect(IllegalArgumentException.class);
+
+		LA1.setHourlyRate(neg);
+	}
+
+	/**
+	 * Test set hourly rate zero.
+	 */
+	@Test
+	public void testSetHourlyRateZero() {
+
+		exception.expect(IllegalArgumentException.class);
+
+		LA1.setHourlyRate(zero);
+	}
+
+	/**
+	 * Test set current hours neg.
+	 */
+	@Test
+	public void testSetCurrentHoursNeg() {
+
+		exception.expect(IllegalArgumentException.class);
+
+		LA1.setCurrentHours(neg);
+	}
+
+	/**
+	 * Test set current hours zero.
+	 */
+	@Test
+	public void testSetCurrentHoursZero() {
+
+		exception.expect(IllegalArgumentException.class);
+
+		LA1.setCurrentHours(zero);
+	}
+
+	/**
+	 * Test set commission rate neg.
+	 */
+	@Test
+	public void testSetCommissionRateNeg() {
+
+		exception.expect(IllegalArgumentException.class);
+		LA1.setCommissionRate(neg);
+
+	}
+
+	/**
+	 * Test set commission rate zero.
+	 */
+	@Test
+	public void testSetCommissionRateZero() {
+
+		exception.expect(IllegalArgumentException.class);
+		LA1.setCommissionRate(zero);
+
+	}
+
+	/**
+	 * Test set current librarian used book totals neg.
+	 */
+	@Test
+	public void testSetCurrentLibrarianUsedBookTotalsNeg() {
+
+		exception.expect(IllegalArgumentException.class);
+		librarian.setCurrentSales(neg);
+
+	}
+
+	/**
+	 * Test set current librarian used book totals zero.
+	 */
+	@Test
+	public void testSetCurrentLibrarianUsedBookTotalsZero() {
+
+		exception.expect(IllegalArgumentException.class);
+		librarian.setCurrentSales(zero);
+
+	}
+
+	/**
+	 * Test set base pay zero.
+	 */
+	@Test
+	public void testSetBasePayZero() {
+
+		exception.expect(IllegalArgumentException.class);
+		librarian.setBasePay(zero);
+
+	}
+
+	/**
+	 * Test set current library used book sales totals neg.
+	 */
+	@Test
+	public void testSetCurrentLibraryUsedBookSalesTotalsNeg() {
+
+		exception.expect(IllegalArgumentException.class);
+		librarian.setCurrentLibraryTotals(neg);
+
+	}
+
+	/**
+	 * Test set current library used book sales totals zero.
+	 */
+	@Test
+	public void testSetCurrentLibraryUsedBookSalesTotalsZero() {
+
+		exception.expect(IllegalArgumentException.class);
+		librarian.setCurrentLibraryTotals(zero);
+
+	}
+
+	/**
+	 * Test library zero.
+	 */
+	@Test
+	public void testLibraryZero() {
+
+		exception.expect(IllegalArgumentException.class);
+
 		Library libraryNegNumber = new Library(0);
-		
-		
-		
+		libraryNegNumber.getLibraryNumber();
+	}
+
+	/**
+	 * Test library neg.
+	 */
+	@Test
+	public void testLibraryNeg() {
+
+		exception.expect(IllegalArgumentException.class);
+
+		Library libraryNegNumber = new Library(-1);
+		libraryNegNumber.getLibraryNumber();
 	}
 
 }
