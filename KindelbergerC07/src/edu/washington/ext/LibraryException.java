@@ -7,6 +7,11 @@ import edu.washington.ext.common.CommissionedEmployee;
  */
 public class LibraryException extends Exception {
 	
+	/**
+	 * Default serial version ID.
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	/** The employee. */
 	private CommissionedEmployee employee;
 
@@ -21,7 +26,7 @@ public class LibraryException extends Exception {
 	 *
 	 * @param emp the emp
 	 */
-	public LibraryException(CommissionedEmployee emp) {
+	public LibraryException(final CommissionedEmployee emp) {
 		this.setEmployee(emp);
 	}
 	
@@ -31,7 +36,7 @@ public class LibraryException extends Exception {
 	 *
 	 * @param message the message
 	 */
-	public LibraryException(String message) {
+	public LibraryException(final String message) {
 		super(message);
 	}
 
@@ -40,7 +45,7 @@ public class LibraryException extends Exception {
 	 *
 	 * @return the employee
 	 */
-	public CommissionedEmployee getEmployee() {
+	public final CommissionedEmployee getEmployee() {
 		return employee;
 	}
 
@@ -49,7 +54,7 @@ public class LibraryException extends Exception {
 	 *
 	 * @param employee the employee to set
 	 */
-	public void setEmployee(CommissionedEmployee employee) {
+	public final void setEmployee(final CommissionedEmployee employee) {
 		this.employee = employee;
 	}
 

@@ -1,0 +1,4 @@
+What was experiences using Eclipse or your tool of choice for performing the assignments.
+
+I used eclipse, as does my work place. I found it to be very helpful, especially when you start using add-ons like JAutodoc 
+and CheckStyle. I appreciated the help and shortcuts.

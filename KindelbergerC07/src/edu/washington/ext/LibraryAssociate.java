@@ -60,12 +60,12 @@ public class LibraryAssociate extends AbstractEmployee implements CommissionedEm
 
 
 	/**
-	 * Gets the Commission Rate
+	 * Gets the Commission Rate.
 	 * 
 	 * @return the double
 	 */
 	@Override
-	public double getCommissionRate() {
+	public final double getCommissionRate() {
 		return this.commissionRate;
 	}
 	

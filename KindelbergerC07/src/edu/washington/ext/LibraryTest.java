@@ -329,7 +329,11 @@ public class LibraryTest {
 	public void testGetTotalCommissionsException()
 			throws LibraryCommissionException {
 
-		exception.expect(LibraryCommissionException.class);
+//		exception.expect(LibraryCommissionException.class);
+//		This cannot be tested, because we are previously checking for zero and neg before 
+//		they are added to the fields to compute Total Commission.
+		
+		exception.expect(IllegalArgumentException.class);
 
 		LA1.setCommissionRate(1);
 		LA2.setCurrentSales(1);

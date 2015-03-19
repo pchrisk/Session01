@@ -80,15 +80,12 @@ public class Library {
 		
 		return payroll;
 		}
-		catch(LibraryException e){
-			throw e;
-//			new LibraryException(((AbstractEmployee)e.getEmployee()).getName() + " commission rate is greater than 100%");
-		}
-		catch(Exception e) {
+		catch (LibraryException e) {
 			throw e;
 		}
-
-		
+		catch (Exception e) {
+			throw e;
+		}		
 	}
 
 	/**
@@ -120,25 +117,24 @@ public class Library {
 		double totalCommission = 0;
 		double storeSales = 0;
 		try {
-		for (AbstractEmployee emp : staff) {
-			if (emp instanceof LibraryAssociate) {
-				storeSales += emp.getCurrentSales();
-				totalCommission += ((LibraryAssociate) emp)
-						.calculateCommission();
-			} else if (emp instanceof LibraryEmployee) {
-				storeSales += emp.getCurrentSales();
+			for (AbstractEmployee emp : staff) {
+				if (emp instanceof LibraryAssociate) {
+					storeSales += emp.getCurrentSales();
+					totalCommission += ((LibraryAssociate) emp)
+							.calculateCommission();
+				} else if (emp instanceof LibraryEmployee) {
+					storeSales += emp.getCurrentSales();
+				}
 			}
-		}
-		storeSales += librarian.getCurrentSales();
-		librarian.setCurrentLibraryTotals(storeSales);
-		totalCommission += librarian.calculateCommission();
-		if (totalCommission <= 0) {
-			throw new LibraryCommissionException(totalCommission);
-		} else {
-			return totalCommission;
-		}
-		}
-		catch (LibraryCommissionException e){
+			storeSales += librarian.getCurrentSales();
+			librarian.setCurrentLibraryTotals(storeSales);
+			totalCommission += librarian.calculateCommission();
+			if (totalCommission <= 0) {
+				throw new LibraryCommissionException(totalCommission);
+			} else {
+				return totalCommission;
+			}
+		} catch (LibraryCommissionException e) {
 			throw e;
 		}
 	}

@@ -122,7 +122,7 @@ public class LibraryEmployeeTest {
 	 * Test set current sales.
 	 */
 	@Test
-	public void testSetCurrentSales() {
+	public final void testSetCurrentSales() {
 		assertEquals(bobCurrentSales, LE.getCurrentSales(), .0);
 		LE.setCurrentSales(7500);
 		assertEquals(7500, LE.getCurrentSales(), .0);
@@ -136,7 +136,7 @@ public class LibraryEmployeeTest {
 	 * Test calculate pay.
 	 */
 	@Test
-	public void testCalculatePay() {
+	public final void testCalculatePay() {
 		assertEquals(bobPay, LE.calculatePay(), .0);
 	}
 

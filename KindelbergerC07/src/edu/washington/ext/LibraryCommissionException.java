@@ -5,6 +5,12 @@ package edu.washington.ext;
  */
 public class LibraryCommissionException extends Exception {
 	
+	/**
+	 * Default serial version ID.
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	/** The commission totals. */
 	private double commissionTotals;
 
@@ -19,7 +25,7 @@ public class LibraryCommissionException extends Exception {
 	 *
 	 * @param commissionTotals the commission totals
 	 */
-	public LibraryCommissionException(double commissionTotals) {
+	public LibraryCommissionException(final double commissionTotals) {
 		this.setCommissionTotals(commissionTotals);
 	}
 
@@ -28,7 +34,7 @@ public class LibraryCommissionException extends Exception {
 	 *
 	 * @param message the message
 	 */
-	public LibraryCommissionException(String message) {
+	public LibraryCommissionException(final String message) {
 		super(message);
 	}
 
@@ -37,7 +43,7 @@ public class LibraryCommissionException extends Exception {
 	 *
 	 * @param cause the cause
 	 */
-	public LibraryCommissionException(Throwable cause) {
+	public LibraryCommissionException(final Throwable cause) {
 		super(cause);
 	}
 
@@ -47,7 +53,7 @@ public class LibraryCommissionException extends Exception {
 	 * @param message the message
 	 * @param cause the cause
 	 */
-	public LibraryCommissionException(String message, Throwable cause) {
+	public LibraryCommissionException(final String message, final Throwable cause) {
 		super(message, cause);
 		
 	}
@@ -60,8 +66,8 @@ public class LibraryCommissionException extends Exception {
 	 * @param enableSuppression the enable suppression
 	 * @param writableStackTrace the writable stack trace
 	 */
-	public LibraryCommissionException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
+	public LibraryCommissionException(final String message, final Throwable cause,
+			final boolean enableSuppression, final boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 		
 	}
@@ -71,7 +77,7 @@ public class LibraryCommissionException extends Exception {
 	 *
 	 * @return the commissionTotals
 	 */
-	public double getCommissionTotals() {
+	public final double getCommissionTotals() {
 		return commissionTotals;
 	}
 
@@ -80,7 +86,7 @@ public class LibraryCommissionException extends Exception {
 	 *
 	 * @param commissionTotals the commissionTotals to set
 	 */
-	public void setCommissionTotals(double commissionTotals) {
+	public final void setCommissionTotals(final double commissionTotals) {
 		this.commissionTotals = commissionTotals;
 	}
 

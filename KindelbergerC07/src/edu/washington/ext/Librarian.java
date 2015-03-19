@@ -90,12 +90,12 @@ public class Librarian extends AbstractEmployee implements CommissionedEmployee 
 	}
 
 	/**
-	 * Gets the Commission Rate
+	 * Gets the Commission Rate.
 	 * 
 	 * @return the double
 	 */
 	@Override
-	public double getCommissionRate() {
+	public final double getCommissionRate() {
 		return Librarian.commissionRate;
 	}
 

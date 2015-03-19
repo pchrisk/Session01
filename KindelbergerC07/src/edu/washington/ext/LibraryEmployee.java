@@ -3,7 +3,6 @@ package edu.washington.ext;
 import edu.washington.ext.common.AbstractEmployee;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class LibraryEmployee.
  */
