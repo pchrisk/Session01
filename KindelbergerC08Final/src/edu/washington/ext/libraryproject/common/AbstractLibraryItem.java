@@ -1,13 +1,15 @@
 package edu.washington.ext.libraryproject.common;
 
-//import edu.washington.ext.libraryproject.model.*;
 import edu.washington.ext.libraryproject.model.Patron;
 
 import java.util.Date; 
 
-// <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-// #[regen=yes,id=DCE.FD6EFDA1-D715-94D9-AF44-FEC5DE2F02F3]
-// </editor-fold> 
+/**
+*
+* @author Chris Kindelberger
+* @version final 20150325
+* 
+*/
 public abstract class AbstractLibraryItem implements LibraryItem {
     private String title;
     private Date   publishedDate;

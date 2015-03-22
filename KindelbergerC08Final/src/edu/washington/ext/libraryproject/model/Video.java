@@ -6,6 +6,12 @@ import edu.washington.ext.libraryproject.model.MovieGenre;
 
 import java.util.Date;
 
+/**
+*
+* @author Chris Kindelberger
+* @version final 20150325
+* 
+*/
 
 public class Video extends AbstractLibraryItem {
     private MediaType mediaType = null;

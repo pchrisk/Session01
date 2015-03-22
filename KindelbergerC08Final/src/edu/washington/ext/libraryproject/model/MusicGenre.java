@@ -1,14 +1,32 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package edu.washington.ext.libraryproject.model;
 
 /**
- *
- * @author appleman
- */
+*
+* @author Chris Kindelberger
+* @version final 20150325
+* 
+*/
 public enum MusicGenre {
-    POP, DANCE, HIPHOP, RAP, ROCK, ALTERNATIVE, HARDROCK, FOLK, COUNTRY;
+    POP("Pop"),
+    DANCE("Dance"),
+    HIPHOP("Hip Hop"),
+    RAP("Rap"),
+    ROCK("Rock"),
+    ALTERNATIVE("Alternative"),
+    HARDROCK("Hardrock"),
+    FOLK("Folk"),
+    COUNTRY("Country");
+    
+    private String musicGenre;
+
+    MusicGenre(final String musicGenre) {
+       this.musicGenre = musicGenre;
+   }
+
+   /**
+    * @return the musicGenre
+    */
+   public String getMusicGenre() {
+       return musicGenre;
+   }
 }

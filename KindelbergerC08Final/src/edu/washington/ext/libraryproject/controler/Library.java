@@ -1,5 +1,6 @@
 package edu.washington.ext.libraryproject.controler;
 
+
 import edu.washington.ext.libraryproject.common.LibraryItem;
 import edu.washington.ext.libraryproject.model.Patron;
 
@@ -8,27 +9,50 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map; 
 
-// <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-// #[regen=yes,id=DCE.2FEFDCA2-EC7B-D0BE-1272-223B5E6BD078]
-// </editor-fold> 
+/**
+*
+* @author Chris Kindelberger
+* @version final 20150325
+* 
+*/
+
 public class Library {
 
     private List<LibraryItem> items = null;
     private Map<Integer, Patron> patrons = null;
     private Map<Integer, LibraryItem> checkedOutItems = null;
     private String branch = null;
+    private int cardNumber = 0;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.BB0EE4F5-FAE9-F758-28D3-AD613B04A35C]
-    // </editor-fold> 
+    
     public Library (String branch) {
+    	if ( this.branch == null) {
+			this.branch = branch;
+			patrons = new HashMap<Integer, Patron>();
+			checkedOutItems = new HashMap<Integer, LibraryItem>();
+			items = new ArrayList<LibraryItem>();
+			
+		} else {
+			throw new IllegalArgumentException("Library branch, " + branch + ", already exists");
+		}
     }
 
     public void add(LibraryItem item) throws LibraryException {
-
+    	if (!items.contains(item)) {
+    		items.add(item);
+    	} else {
+    		throw new LibraryException(item, "Item " + (item.getTitle()) + " already exists.");
+    	}
+       		
     }
 
     public void remove(LibraryItem item) throws LibraryException {
+    	
+    	if (items.contains(item)) {
+    		items.remove(item);
+    	} else {
+    		throw new LibraryException(item, "Item " + (item.getTitle()) + " was not found.");
+    	}
 
     }
 
@@ -39,11 +63,24 @@ public class Library {
      * @return library card number
      */
     public int addPatron(String name) throws PatronException {
-        return 0;
+    	if (patrons.get(name) == null) {
+    		cardNumber ++;    	
+    		patrons.put(cardNumber, new Patron(name, cardNumber));
+    		return cardNumber;
+    	} else {
+    		throw new PatronException(patrons.get(name));
+    	}
     }
 
     public boolean removePatron(int libraryCardNumber) throws PatronException {
-        return false;
+    	if (patrons.containsKey(libraryCardNumber)) {
+    		patrons.remove(libraryCardNumber);
+    		return true;
+    	} else {
+//    		throw new PatronException(libraryCardNumber);
+    		return false;
+    	}
+       
     }
 
 

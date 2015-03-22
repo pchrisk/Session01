@@ -1,9 +1,13 @@
 package edu.washington.ext.libraryproject.model;
 
 /**
- * The Enum Binding that defines binding values for books.
- *
- */
+* The Enum Binding that defines binding values for books.
+* 
+* @author Chris Kindelberger
+* @version final 20150325
+* 
+*/
+
 public enum Binding {
 
     /** The HARDCOVER. */

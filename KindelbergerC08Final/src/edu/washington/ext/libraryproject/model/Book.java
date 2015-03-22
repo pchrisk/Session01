@@ -3,12 +3,13 @@ package edu.washington.ext.libraryproject.model;
 import edu.washington.ext.libraryproject.common.AbstractLibraryItem;
 import java.util.Date;
 
-
-
 /**
  * A class that maintains information on a book. This might form part of a
  * larger application such as a library system, for instance.
- *
+ * 
+ * @author Chris Kindelberger
+ * @version final 20150325
+ * 
  */
 
 public class Book extends AbstractLibraryItem {

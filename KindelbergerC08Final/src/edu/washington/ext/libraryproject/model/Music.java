@@ -5,7 +5,12 @@ import edu.washington.ext.libraryproject.model.MediaType;
 import edu.washington.ext.libraryproject.model.MusicGenre;
 import java.util.Date;
 
-
+/**
+*
+* @author Chris Kindelberger
+* @version final 20150325
+* 
+*/
 
 public class Music extends AbstractLibraryItem  {
     private MediaType mediaType = null;

@@ -1,17 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package edu.washington.ext.libraryproject.common;
 
 import edu.washington.ext.libraryproject.model.Patron;
 import java.util.Date;
 
 /**
- *
- * @author appleman
- */
+*
+* @author Chris Kindelberger
+* @version final 20150325
+* 
+*/
+
 public interface LibraryItem {
 
     /**

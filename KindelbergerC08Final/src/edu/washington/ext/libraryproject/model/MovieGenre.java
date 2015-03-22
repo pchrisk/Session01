@@ -1,14 +1,30 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package edu.washington.ext.libraryproject.model;
 
 /**
  *
- * @author appleman
+ * @author Chris Kindelberger
+ * @version final 20150325
+ * 
  */
 public enum MovieGenre {
-    ACTION, ADVENTURE, COMEDY, CRIME, DOCUMENTARY, DRAMA, FAMILY;
+    ACTION("Action"),
+    ADVENTURE("Adventure"),
+    COMEDY("Comedy"),
+    CRIME("Crime"),
+    DOCUMENTARY("Documentary"),
+    DRAMA("Drama"),
+    FAMILY("Family");
+    
+    private String movieGenre;
+
+    MovieGenre(final String movieGenre) {
+       this.movieGenre = movieGenre;
+   }
+
+   /**
+    * @return the movieGenre
+    */
+   public String getMovieGenre() {
+       return movieGenre;
+   }
 }
