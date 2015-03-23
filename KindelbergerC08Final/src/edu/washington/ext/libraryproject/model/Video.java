@@ -28,6 +28,7 @@ public class Video extends AbstractLibraryItem {
         this.director = director;
         this.producer = producer;
         this.mediaType = mediaType;
+        this.genre = genre;
     }
 
 
