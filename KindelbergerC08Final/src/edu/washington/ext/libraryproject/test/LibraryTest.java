@@ -1,4 +1,4 @@
-package edu.washington.ext.Libraryproect.test;
+package edu.washington.ext.libraryproject.test;
 
 import static org.junit.Assert.*;
 
