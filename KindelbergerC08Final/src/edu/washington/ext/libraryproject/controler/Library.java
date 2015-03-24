@@ -53,7 +53,6 @@ public class Library {
     	} else {
     		throw new LibraryException(item, "Item " + (item.getTitle()) + " was not found.");
     	}
-
     }
 
 
@@ -85,14 +84,28 @@ public class Library {
 
 
     public void checkout(LibraryItem item, int libraryCardNumber) throws CheckInOutException {
+    	
+    	checkedOutItems.put(libraryCardNumber, item);
+    	
 
     }
 
     public boolean isCheckout(LibraryItem item) throws CheckInOutException {
-        return false;
+    	for (int key : checkedOutItems.keySet()) {
+			if (checkedOutItems.get(key).getTitle() == item.getTitle()) {
+				return true;
+			}
+		}    	
+    	throw new CheckInOutException(item.getTitle() + " is not checked out.");    		
+    	
+       
     }
 
     public void checkin(LibraryItem item) throws CheckInOutException {
+    	if (isCheckout(item)) {
+    		checkedOutItems.remove(item)
+    	}
+    		
         
     }
 

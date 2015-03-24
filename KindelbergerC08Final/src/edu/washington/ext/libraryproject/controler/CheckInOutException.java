@@ -9,6 +9,12 @@ package edu.washington.ext.libraryproject.controler;
  *
  * @author appleman
  */
-class CheckInOutException extends Exception {
+public class CheckInOutException extends Exception {
+
+	public CheckInOutException(String msg) {
+		super(msg);
+	}
+	
+	
 
 }
