@@ -67,7 +67,7 @@ public class Library {
     		patrons.put(cardNumber, new Patron(name, cardNumber));
     		return cardNumber;
     	} else {
-    		throw new PatronException(patrons.get(name));
+    		throw new PatronException(patrons.get(name), name, name + "already a patron.");
     	}
     }
 
@@ -83,14 +83,32 @@ public class Library {
     }
 
 
-    public void checkout(LibraryItem item, int libraryCardNumber) throws CheckInOutException {
+    public void checkout(LibraryItem item, int libraryCardNumber) throws CheckInOutException, 
+    					LibraryException, PatronException {
+    	if (!items.contains(item)) {
+    		this.add(item);
+    	}
+    	if (patrons.containsKey(libraryCardNumber)) {
+    		try {
+    			checkedOutItems.put(libraryCardNumber, item);
+    			item.setCheckedOut(patrons.get(libraryCardNumber));
+    		}
+    		catch (Exception e) {
+    			new CheckInOutException(item, libraryCardNumber, item.getTitle() + " could not be checkedout.");
+    		}
+    		
+    	} else {
+    		throw new PatronException("Library card number, " + libraryCardNumber + ", is not registered.");
+    	}
     	
-    	checkedOutItems.put(libraryCardNumber, item);
     	
 
     }
 
     public boolean isCheckout(LibraryItem item) throws CheckInOutException {
+    	if (item.getCheckedOutPatron() == null) {
+    		return false;
+    	}
     	for (int key : checkedOutItems.keySet()) {
 			if (checkedOutItems.get(key).getTitle() == item.getTitle()) {
 				return true;
@@ -101,10 +119,13 @@ public class Library {
        
     }
 
-    public void checkin(LibraryItem item) throws CheckInOutException {
+    public boolean checkin(LibraryItem item) throws CheckInOutException {
     	if (isCheckout(item)) {
-    		checkedOutItems.remove(item)
+    		checkedOutItems.remove(item);
+    		item.setCheckedOut(null);
+    		return true;
     	}
+    	return false;
     		
         
     }
