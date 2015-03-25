@@ -2,81 +2,104 @@ package edu.washington.ext.libraryproject.common;
 
 import edu.washington.ext.libraryproject.model.Patron;
 
-import java.util.Date; 
+import java.util.Date;
 
 /**
-*
-* @author Chris Kindelberger
-* @version final 20150325
-* 
-*/
+ * The Class AbstractLibraryItem.
+ *
+ * @author Chris Kindelberger
+ * @version final 20150325
+ */
 public abstract class AbstractLibraryItem implements LibraryItem {
-    private String title;
-    private Date   publishedDate;
-    private String author;
-    private String publisher;
-    private Patron checkedOut;
 
-//        super((String title, String author, String publisher, Date publishedDate);
+	/** The title. */
+	private String title;
 
-    public AbstractLibraryItem(String title, String author, String publisher,
-            Date publishedDate) {
-        this.title = title;
-        this.publishedDate = publishedDate;
-        this.author = author;
-        this.publisher = publisher;
-    }
+	/** The published date. */
+	private Date publishedDate;
 
+	/** The author. */
+	private String author;
 
+	/** The publisher. */
+	private String publisher;
 
-    /**
-     * @return the title
-     */
-    public String getTitle() {
-        return title;
-    }
+	/** The checked out. */
+	private Patron checkedOut;
 
-    /**
-     * @return the publishedDate
-     */
-    public Date getPublishedDate() {
-        return publishedDate;
-    }
+	/**
+	 * Instantiates a new abstract library item.
+	 *
+	 * @param title
+	 *            the title
+	 * @param author
+	 *            the author
+	 * @param publisher
+	 *            the publisher
+	 * @param publishedDate
+	 *            the published date
+	 */
+	public AbstractLibraryItem(final String title, final String author,
+			final String publisher, final Date publishedDate) {
+		this.title = title;
+		this.publishedDate = publishedDate;
+		this.author = author;
+		this.publisher = publisher;
+	}
 
-    /**
-     * @return the author
-     */
-    public String getAuthor() {
-        return author;
-    }
+	/**
+	 * Gets the title.
+	 *
+	 * @return the title
+	 */
+	public final String getTitle() {
+		return title;
+	}
 
-    /**
-     * @return the publisher
-     */
-    public String getPublisher() {
-        return publisher;
-    }
+	/**
+	 * Gets the published date.
+	 *
+	 * @return the publishedDate
+	 */
+	public final Date getPublishedDate() {
+		return publishedDate;
+	}
 
-    /**
-     * @return the checkedOut
-     */
-    public Patron getCheckedOutPatron() {
-        return checkedOut;
-    }
+	/**
+	 * Gets the author.
+	 *
+	 * @return the author
+	 */
+	public final String getAuthor() {
+		return author;
+	}
 
-    /**
-     * @param checkedOut the checkedOut to set
-     */
-    public void setCheckedOut(Patron checkedOut) {
-        this.checkedOut = checkedOut;
-    }
+	/**
+	 * Gets the publisher.
+	 *
+	 * @return the publisher
+	 */
+	public final String getPublisher() {
+		return publisher;
+	}
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+	/**
+	 * Gets the checked out patron.
+	 *
+	 * @return the checkedOut
+	 */
+	public final Patron getCheckedOutPatron() {
+		return checkedOut;
+	}
 
-
+	/**
+	 * Sets the checked out.
+	 *
+	 * @param checkedOut
+	 *            the checkedOut to set
+	 */
+	public final void setCheckedOut(final Patron checkedOut) {
+		this.checkedOut = checkedOut;
+	}
 
 }
-

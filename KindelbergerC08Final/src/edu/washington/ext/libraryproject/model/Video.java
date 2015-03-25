@@ -6,65 +6,103 @@ import edu.washington.ext.libraryproject.model.MovieGenre;
 
 import java.util.Date;
 
+// TODO: Auto-generated Javadoc
 /**
-*
-* @author Chris Kindelberger
-* @version final 20150325
-* 
-*/
+ * The Class Video.
+ *
+ * @author Chris Kindelberger
+ * @version final 20150325
+ */
 
 public class Video extends AbstractLibraryItem {
-    private MediaType mediaType = null;
-    private MovieGenre genre = null;
-    private String director = null;
-    private String producer = null;
-    
-    public Video(String title, String author, 
-                 String publisher, Date publishedDate,
-                 MediaType mediaType,
-                 String director, String producer,
-                 MovieGenre genre) {
-        super(title, author, publisher, publishedDate);
-        this.director = director;
-        this.producer = producer;
-        this.mediaType = mediaType;
-        this.genre = genre;
-    }
 
+	/** The media type. */
+	private MediaType mediaType = null;
 
-    /**
-     * @return the mediaType
-     */
-    public MediaType getMediaType() {
-        return mediaType;
-    }
+	/** The genre. */
+	private MovieGenre genre = null;
 
-    /**
-     * @return the genre
-     */
-    public MovieGenre getGenre() {
-        return genre;
-    }
+	/** The director. */
+	private String director = null;
 
-    /**
-     * @return the director
-     */
-    public String getDirector() {
-        return director;
-    }
+	/** The producer. */
+	private String producer = null;
 
-    /**
-     * @param director the director to set
-     */
-    public void setDirector(String director) {
-        this.director = director;
-    }
+	/**
+	 * Instantiates a new video.
+	 *
+	 * @param title
+	 *            the title
+	 * @param author
+	 *            the author
+	 * @param publisher
+	 *            the publisher
+	 * @param publishedDate
+	 *            the published date
+	 * @param mediaType
+	 *            the media type
+	 * @param director
+	 *            the director
+	 * @param producer
+	 *            the producer
+	 * @param genre
+	 *            the genre
+	 */
+	public Video(final String title, final String author,
+			final String publisher, final Date publishedDate,
+			final MediaType mediaType, final String director,
+			final String producer, final MovieGenre genre) {
 
-    /**
-     * @return the producer
-     */
-    public String getProducer() {
-        return producer;
-    }
+		super(title, author, publisher, publishedDate);
+		this.director = director;
+		this.producer = producer;
+		this.mediaType = mediaType;
+		this.genre = genre;
+	}
+
+	/**
+	 * Gets the media type.
+	 *
+	 * @return the mediaType
+	 */
+	public final MediaType getMediaType() {
+		return mediaType;
+	}
+
+	/**
+	 * Gets the genre.
+	 *
+	 * @return the genre
+	 */
+	public final MovieGenre getGenre() {
+		return genre;
+	}
+
+	/**
+	 * Gets the director.
+	 *
+	 * @return the director
+	 */
+	public final String getDirector() {
+		return director;
+	}
+
+	/**
+	 * Sets the director.
+	 *
+	 * @param director
+	 *            the director to set
+	 */
+	public final void setDirector(final String director) {
+		this.director = director;
+	}
+
+	/**
+	 * Gets the producer.
+	 *
+	 * @return the producer
+	 */
+	public final String getProducer() {
+		return producer;
+	}
 }
-

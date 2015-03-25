@@ -1,34 +1,48 @@
 package edu.washington.ext.libraryproject.model;
 
-
 /**
-*
-* @author Chris Kindelberger
-* @version final 20150325
-* 
-*/
+ * The Class Patron.
+ *
+ * @author Chris Kindelberger
+ * @version final 20150325
+ */
 public class Patron {
-    private String name = null;
-    private int cardNumber = 0;
 
-    public Patron(String name, int cardNumber) {
-        this.name = name;
-        this.cardNumber = cardNumber;
-    }
+	/** The name. */
+	private String name = null;
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
+	/** The card number. */
+	private int cardNumber = 0;
 
-    /**
-     * @return the cardNumber
-     */
-    public int getCardNumber() {
-        return cardNumber;
-    }
+	/**
+	 * Instantiates a new patron.
+	 *
+	 * @param name
+	 *            the name
+	 * @param cardNumber
+	 *            the card number
+	 */
+	public Patron(final String name, final int cardNumber) {
+		this.name = name;
+		this.cardNumber = cardNumber;
+	}
 
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
+	public final String getName() {
+		return name;
+	}
+
+	/**
+	 * Gets the card number.
+	 *
+	 * @return the cardNumber
+	 */
+	public final int getCardNumber() {
+		return cardNumber;
+	}
 
 }

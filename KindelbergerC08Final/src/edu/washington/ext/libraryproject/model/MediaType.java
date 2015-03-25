@@ -1,27 +1,42 @@
 package edu.washington.ext.libraryproject.model;
 
 /**
-*
-* @author Chris Kindelberger
-* @version final 20150325
-* 
-*/
+ * The Enum MediaType.
+ *
+ * @author Chris Kindelberger
+ * @version final 20150325
+ */
 public enum MediaType {
-    DVD("dvd"),
-    Bluray("bluray"),
-    CD("cd");
 
-    private String mediaType;
+	/** The dvd. */
+	DVD("dvd"),
 
-     MediaType(final String mediaType) {
-        this.mediaType = mediaType;
-    }
+	/** The Bluray. */
+	Bluray("bluray"),
 
-    /**
-     * @return the mediaType
-     */
-    public String getMediaType() {
-        return mediaType;
-    }
-     
+	/** The cd. */
+	CD("cd");
+
+	/** The media type. */
+	private String mediaType;
+
+	/**
+	 * Instantiates a new media type.
+	 *
+	 * @param mediaType
+	 *            the media type
+	 */
+	MediaType(final String mediaType) {
+		this.mediaType = mediaType;
+	}
+
+	/**
+	 * Gets the media type.
+	 *
+	 * @return the mediaType
+	 */
+	public String getMediaType() {
+		return mediaType;
+	}
+
 }

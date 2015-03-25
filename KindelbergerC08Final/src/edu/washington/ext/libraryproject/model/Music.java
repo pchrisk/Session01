@@ -1,51 +1,80 @@
 package edu.washington.ext.libraryproject.model;
 
 import edu.washington.ext.libraryproject.common.AbstractLibraryItem;
-import edu.washington.ext.libraryproject.model.MediaType;
-import edu.washington.ext.libraryproject.model.MusicGenre;
 import java.util.Date;
 
 /**
-*
-* @author Chris Kindelberger
-* @version final 20150325
-* 
-*/
+ * The Class Music.
+ *
+ * @author Chris Kindelberger
+ * @version final 20150325
+ */
 
-public class Music extends AbstractLibraryItem  {
-    private MediaType mediaType = null;
-    private String artist = null;
-    private MusicGenre genre = null;
+public class Music extends AbstractLibraryItem {
 
-    public Music(String title, String author, String publisher,
-                 Date publishedDate, MediaType mediaType,
-                 String artist, MusicGenre genre) {
-        super(title, author, publisher, publishedDate);
-        this.mediaType = mediaType;
-        this.artist = artist;
-        this.genre = genre;
-    }
+	/** The media type. */
+	private MediaType mediaType = null;
 
-    /**
-     * @return the mediaType
-     */
-    public MediaType getMediaType() {
-        return mediaType;
-    }
+	/** The artist. */
+	private String artist = null;
 
-    /**
-     * @return the artist
-     */
-    public String getArtist() {
-        return artist;
-    }
+	/** The genre. */
+	private MusicGenre genre = null;
 
-    /**
-     * @return the genre
-     */
-    public MusicGenre getGenre() {
-        return genre;
-    }
-    
+	/**
+	 * Instantiates a new music.
+	 *
+	 * @param title
+	 *            the title
+	 * @param author
+	 *            the author
+	 * @param publisher
+	 *            the publisher
+	 * @param publishedDate
+	 *            the published date
+	 * @param mediaType
+	 *            the media type
+	 * @param artist
+	 *            the artist
+	 * @param genre
+	 *            the genre
+	 */
+	public Music(final String title, final String author,
+			final String publisher, final Date publishedDate,
+			final MediaType mediaType, final String artist,
+			final MusicGenre genre) {
+
+		super(title, author, publisher, publishedDate);
+		this.mediaType = mediaType;
+		this.artist = artist;
+		this.genre = genre;
+	}
+
+	/**
+	 * Gets the media type.
+	 *
+	 * @return the mediaType
+	 */
+	public final MediaType getMediaType() {
+		return mediaType;
+	}
+
+	/**
+	 * Gets the artist.
+	 *
+	 * @return the artist
+	 */
+	public final String getArtist() {
+		return artist;
+	}
+
+	/**
+	 * Gets the genre.
+	 *
+	 * @return the genre
+	 */
+	public final MusicGenre getGenre() {
+		return genre;
+	}
+
 }
-

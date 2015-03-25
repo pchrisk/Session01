@@ -1,145 +1,252 @@
 package edu.washington.ext.libraryproject.controler;
 
-
 import edu.washington.ext.libraryproject.common.LibraryItem;
 import edu.washington.ext.libraryproject.model.Patron;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map; 
+import java.util.Map;
 
 /**
-*
-* @author Chris Kindelberger
-* @version final 20150325
-* 
-*/
+ * The Class Library.
+ *
+ * @author Chris Kindelberger
+ * @version final 20150325
+ */
 
 public class Library {
 
-    private List<LibraryItem> items = null;
-    private Map<Integer, Patron> patrons = null;
-    private Map<Integer, LibraryItem> checkedOutItems = null;
-    private String branch = null;
-    private int cardNumber = 0;
+	/** The items. */
+	private List<LibraryItem> items = null;
 
-    
-    public Library (String branch) {
-    	if ( this.branch == null) {
+	/** The patrons. */
+	private Map<Integer, Patron> patrons = null;
+
+	/** The checked out items. */
+	private Map<Integer, LibraryItem> checkedOutItems = null;
+
+	/** The branch. */
+	private String branch = null;
+
+	/** The card number. */
+	private int cardNumber = 0;
+
+	/**
+	 * Instantiates a new library.
+	 *
+	 * @param branch
+	 *            the branch
+	 */
+	public Library(final String branch) {
+		if (this.branch == null) {
 			this.branch = branch;
 			patrons = new HashMap<Integer, Patron>();
 			checkedOutItems = new HashMap<Integer, LibraryItem>();
 			items = new ArrayList<LibraryItem>();
-			
+
 		} else {
-			throw new IllegalArgumentException("Library branch, " + branch + ", already exists");
+			throw new IllegalArgumentException("Library branch, " + branch
+					+ ", already exists");
 		}
-    }
+	}
 
-    public void add(LibraryItem item) throws LibraryException {
-    	if (!items.contains(item)) {
-    		items.add(item);
-    	} else {
-    		throw new LibraryException(item, "Item " + (item.getTitle()) + " already exists.");
-    	}
-       		
-    }
+	/**
+	 * Adds the.
+	 *
+	 * @param item
+	 *            the item
+	 * @throws LibraryException
+	 *             the library exception
+	 */
+	public final void add(final LibraryItem item) throws LibraryException {
+		if (!items.contains(item)) {
+			items.add(item);
+		} else {
+			throw new LibraryException(item, "Item " + (item.getTitle())
+					+ " already exists.");
+		}
+	}
 
-    public void remove(LibraryItem item) throws LibraryException {
-    	
-    	if (items.contains(item)) {
-    		items.remove(item);
-    	} else {
-    		throw new LibraryException(item, "Item " + (item.getTitle()) + " was not found.");
-    	}
-    }
+	/**
+	 * Removes the.
+	 *
+	 * @param item
+	 *            the item
+	 * @throws LibraryException
+	 *             the library exception
+	 */
+	public final void remove(final LibraryItem item) throws LibraryException {
+		if (items.contains(item)) {
+			items.remove(item);
+		} else {
+			throw new LibraryException(item, "Item " + (item.getTitle())
+					+ " was not found.");
+		}
+	}
 
+	/**
+	 * Adds new patrons and returns library number.
+	 *
+	 * @param name
+	 *            of patron
+	 * @return library card number
+	 * @throws PatronException
+	 *             the patron exception
+	 */
+	public final int addPatron(final String name) throws PatronException {
+		boolean inList = false;
+		for (int key : patrons.keySet()) {
 
-    /**
-     * Adds new patrons and returns library number
-     * @param name of patron
-     * @return library card number
-     */
-    public int addPatron(String name) throws PatronException {
-    	if (patrons.get(name) == null) {
-    		cardNumber ++;    	
-    		patrons.put(cardNumber, new Patron(name, cardNumber));
-    		return cardNumber;
-    	} else {
-    		throw new PatronException(patrons.get(name), name, name + "already a patron.");
-    	}
-    }
-
-    public boolean removePatron(int libraryCardNumber) throws PatronException {
-    	if (patrons.containsKey(libraryCardNumber)) {
-    		patrons.remove(libraryCardNumber);
-    		return true;
-    	} else {
-//    		throw new PatronException(libraryCardNumber);
-    		return false;
-    	}
-       
-    }
-
-
-    public void checkout(LibraryItem item, int libraryCardNumber) throws CheckInOutException, 
-    					LibraryException, PatronException {
-    	if (!items.contains(item)) {
-    		this.add(item);
-    	}
-    	if (patrons.containsKey(libraryCardNumber)) {
-    		try {
-    			checkedOutItems.put(libraryCardNumber, item);
-    			item.setCheckedOut(patrons.get(libraryCardNumber));
-    		}
-    		catch (Exception e) {
-    			new CheckInOutException(item, libraryCardNumber, item.getTitle() + " could not be checkedout.");
-    		}
-    		
-    	} else {
-    		throw new PatronException("Library card number, " + libraryCardNumber + ", is not registered.");
-    	}
-    	
-    	
-
-    }
-
-    public boolean isCheckout(LibraryItem item) throws CheckInOutException {
-    	if (item.getCheckedOutPatron() == null) {
-    		return false;
-    	}
-    	for (int key : checkedOutItems.keySet()) {
-			if (checkedOutItems.get(key).getTitle() == item.getTitle()) {
-				return true;
+			if (patrons.get(key).getName() == name) {
+				inList = true;
+				throw new PatronException(patrons.get(key), name, name
+						+ " already a patron.");
+			} else {
+				inList = false;
 			}
-		}    	
-    	throw new CheckInOutException(item.getTitle() + " is not checked out.");    		
-    	
-       
-    }
+		}
+		if (!inList) {
+			cardNumber++;
+			patrons.put(cardNumber, new Patron(name, cardNumber));
+			return cardNumber;
+		} else {
+			throw new PatronException(patrons.get(name), name, name
+					+ "already a patron.");
+		}
+	}
 
-    public boolean checkin(LibraryItem item) throws CheckInOutException {
-    	if (isCheckout(item)) {
-    		checkedOutItems.remove(item);
-    		item.setCheckedOut(null);
-    		return true;
-    	}
-    	return false;
-    		
-        
-    }
+	/**
+	 * Removes the patron.
+	 *
+	 * @param libraryCardNumber
+	 *            the library card number
+	 * @return true, if successful
+	 * @throws PatronException
+	 *             the patron exception
+	 */
+	public final boolean removePatron(final int libraryCardNumber)
+			throws PatronException {
+		if (patrons.containsKey(libraryCardNumber)) {
+			patrons.remove(libraryCardNumber);
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-    public Map<Integer, Patron> getLibraryMembers() {
-        return patrons;
-    }
+	/**
+	 * Checkout.
+	 *
+	 * @param item
+	 *            the item
+	 * @param libraryCardNumber
+	 *            the library card number
+	 * @throws CheckInOutException
+	 *             the check in out exception
+	 * @throws LibraryException
+	 *             the library exception
+	 * @throws PatronException
+	 *             the patron exception
+	 */
+	public void checkout(final LibraryItem item, final int libraryCardNumber)
+			throws CheckInOutException, LibraryException, PatronException {
+		// if (!items.contains(item)) {
+		// this.add(item);
+		// }
+		if (patrons.containsKey(libraryCardNumber)) {
+			if ((item.getCheckedOutPatron() == null) && (items.contains(item))) {
+				checkedOutItems.put(libraryCardNumber, item);
+				item.setCheckedOut(patrons.get(libraryCardNumber));
+			} else {
+				throw new CheckInOutException(item, libraryCardNumber,
+						item.getTitle() + " could not be checkedout.");
+			}
+		} else {
+			throw new PatronException("Library card number, "
+					+ libraryCardNumber + ", is not registered.");
+		}
+	}
 
-    public Map<Integer, LibraryItem> getCheckedOutItems() {
-        return checkedOutItems;
-    }
+	/**
+	 * Checks if is checkout.
+	 *
+	 * @param item
+	 *            the item
+	 * @return true, if is checkout
+	 * @throws CheckInOutException
+	 *             the check in out exception
+	 */
+	public final boolean isCheckout(final LibraryItem item)
+			throws CheckInOutException {
+		if (items.contains(item)) {
+			return !(item.getCheckedOutPatron() == null);
+		} else {
+			throw new CheckInOutException(item, "Not in library catalog");
+		}
+	}
 
-    public List<LibraryItem> getListOfAllLibraryItems() {
-        return items;
-    }
+	/**
+	 * Checkin.
+	 *
+	 * @param item
+	 *            the item
+	 * @return true, if successful
+	 * @throws CheckInOutException
+	 *             the check in out exception
+	 */
+	public final boolean checkin(final LibraryItem item)
+			throws CheckInOutException {
+		if (items.contains(item)) {
+			if (isCheckout(item)) {
+				checkedOutItems.remove(item);
+				item.setCheckedOut(null);
+				return true;
+			} else {
+				throw new CheckInOutException(item, "Not Checked Out");
+			}
+		} else {
+			throw new CheckInOutException(item, "Not in library catalog");
+		}
+	}
+
+	/**
+	 * Gets the library members.
+	 *
+	 * @return the library members
+	 */
+	public final Map<Integer, Patron> getLibraryMembers() {
+		return patrons;
+	}
+
+	/**
+	 * Gets the checked out items.
+	 *
+	 * @return the checked out items
+	 */
+	public final List<LibraryItem> getCheckedOutItems() {
+		ArrayList<LibraryItem> checkedOutItemsList = new ArrayList<>();
+		for (int key : checkedOutItems.keySet()) {
+			checkedOutItemsList.add(checkedOutItems.get(key));
+		}
+		return checkedOutItemsList;
+	}
+
+	/**
+	 * Gets the checked out items map.
+	 *
+	 * @return the checked out items map
+	 */
+	public final Map<Integer, LibraryItem> getCheckedOutItemsMap() {
+		return checkedOutItems;
+	}
+
+	/**
+	 * Gets the list of all library items.
+	 *
+	 * @return the list of all library items
+	 */
+	public final List<LibraryItem> getListOfAllLibraryItems() {
+		return items;
+	}
 }
-
